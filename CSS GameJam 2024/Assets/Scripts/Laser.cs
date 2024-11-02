@@ -118,18 +118,20 @@ public class Laser : MonoBehaviour
     {
         lineRendererDamage.enabled = true;
 
-        RaycastHit2D hit = Physics2D.Raycast(m_transform.position, transform.right, defDistanceRay, layerMask);
+        angle = Vector2.SignedAngle(transform.right, new(1, 0));
+        LocalDirection = transform.right;
+        RaycastHit2D hit = Physics2D.BoxCast(firePoint.position, new Vector2(0.1f, 0.1f), angle, transform.right, defDistanceRay, layerMask);
         if (hit)
         {
-            Draw2DRay(lineRendererDamage, firePoint.position, hit.point);
+            Draw2DRay(lineRendererDamage, transform.position, hit.point);
             if (hit.collider.CompareTag("Enemy"))
             {
-                hit.collider.GetComponent<EnemyController>().Damage(firePoint.transform.right, 10, 100);
+                hit.collider.GetComponent<EnemyController>().Damage(transform.right, 10, 100);
             }
         }
         else
         {
-            Draw2DRay(lineRendererDamage, firePoint.position, firePoint.transform.right * defDistanceRay);
+            Draw2DRay(lineRendererDamage, transform.position, transform.right * defDistanceRay);
         }   
     }
     

@@ -6,7 +6,7 @@ public class EnemyController : MonoBehaviour
 {
     private GameObject player;
     private Rigidbody2D playerRB;
-    private EnemyManager _enemyManager;
+    private EnemyManager _enemyManagerGlobal;
     
     private float moveSpeed = 20f;
     private Rigidbody2D rb;
@@ -16,6 +16,8 @@ public class EnemyController : MonoBehaviour
     private float alpha = 1.0f;
     private float turnSpeed = 1f;
     private float angleOffset = 10f;
+    
+    public Spawner spawner;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -27,8 +29,8 @@ public class EnemyController : MonoBehaviour
         moveSpeed = Random.Range(0.8f*moveSpeed, 1.2f*moveSpeed);
         turnSpeed = Random.Range(0.5f*turnSpeed, 1.5f*turnSpeed);
         angleOffset = Random.Range(-1.0f*angleOffset, 1.0f*angleOffset);
-        _enemyManager = GameObject.Find("GameMaster").GetComponent<EnemyManager>();
-        _enemyManager.RegisterEnemy(gameObject);
+        _enemyManagerGlobal = GameObject.Find("GameMaster").GetComponent<EnemyManager>();
+        _enemyManagerGlobal.RegisterEnemy(gameObject);
     }
 
     // Update is called once per frame
@@ -66,6 +68,7 @@ public class EnemyController : MonoBehaviour
 
     public void OnDestroy()
     {
-        _enemyManager.RemoveEnemy(gameObject);
+        _enemyManagerGlobal.RemoveEnemy(gameObject);
+        spawner.RemoveEnemy(gameObject);
     }
 }

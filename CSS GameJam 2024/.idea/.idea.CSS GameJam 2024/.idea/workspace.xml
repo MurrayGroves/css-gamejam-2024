@@ -21,13 +21,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Attach to Unity Editor.Attach to Unity Editor.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.build.unityPlugin&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Attach to Unity Editor.Attach to Unity Editor.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="$USER_HOME$/Unity/Hub/Editor/6000.0.25f1/Editor/Unity" />
@@ -75,7 +75,7 @@
       <option name="presentableId" value="Default" />
       <updated>1730540610838</updated>
       <workItem from="1730540616582" duration="8596000" />
-      <workItem from="1730553635568" duration="16533000" />
+      <workItem from="1730553635568" duration="19367000" />
     </task>
     <servers />
   </component>
@@ -94,13 +94,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/EnemyController.cs</url>
-          <line>46</line>
+          <line>48</line>
           <properties documentPath="$PROJECT_DIR$/Assets/Scripts/EnemyController.cs" containingFunctionPresentation="Method 'decreaseHealth'">
             <startOffsets>
-              <option value="1703" />
+              <option value="1757" />
             </startOffsets>
             <endOffsets>
-              <option value="1750" />
+              <option value="1804" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="2" />

@@ -5,68 +5,45 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     private List<GameObject> _enemies = new();
-    private Camera _camera;
+    private int spawnedCount = 0;
     
-    public List<GameObject> ghostPrefabs;
+    public List<GameObject> enemyPrefabs;
+    public int maxAlive;
+    public int spawnGroupSize;
+    public int maxSpawn;
+    // Seconds between each spawn
+    public float spawnInterval;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        InvokeRepeating("SpawnGhost", 0, 5);
-        _camera = Camera.main;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public static Bounds OrthographicBounds(Camera camera)
-    {
-        float screenAspect = (float)Screen.width / (float)Screen.height;
-        float cameraHeight = camera.orthographicSize * 2;
-        Bounds bounds = new Bounds(
-            camera.transform.position,
-            new Vector3(cameraHeight * screenAspect, cameraHeight, 0));
-        return bounds;
+        InvokeRepeating(nameof(Spawn), spawnInterval, spawnInterval);
     }
     
-    void SpawnGhost()
+    private void Spawn()
     {
-        GameObject prefab = ghostPrefabs[Random.Range(0, ghostPrefabs.Count)];
-        Bounds bounds = OrthographicBounds(_camera);
-        int side = Random.Range(0, 4);
-        Vector3 spawnPos = Vector2.zero;
-        switch (side)
+        for (int i = 0; i < spawnGroupSize; i++)
         {
-            case 0:
-                spawnPos.x = bounds.min.x - 3;
-                spawnPos.y = Random.Range(bounds.min.y, bounds.max.y);
-                break;
-            case 1:
-                spawnPos.x = bounds.max.x + 3;
-                spawnPos.y = Random.Range(bounds.min.y, bounds.max.y);
-                break;
-            case 2:
-                spawnPos.y = bounds.min.y - 3;
-                spawnPos.x = Random.Range(bounds.min.x, bounds.max.x);
-                break;
-            case 3:
-                spawnPos.y = bounds.max.y + 3;
-                spawnPos.x = Random.Range(bounds.min.x, bounds.max.x);
-                break;
+            if (_enemies.Count >= maxAlive)
+            {
+                return;
+            }
+            if (spawnedCount >= maxSpawn)
+            {
+                return;
+            }
+            spawnedCount++;
+            GameObject prefab = enemyPrefabs[Random.Range(0, enemyPrefabs.Count)];
+            Vector2 offset = Random.insideUnitCircle;
+            GameObject enemy = Instantiate(prefab, transform.position + new Vector3(offset.x, offset.y, 0), Quaternion.identity);
+            _enemies.Add(enemy);
+            enemy.GetComponent<EnemyController>().spawner = this;
         }
-        Instantiate(prefab, spawnPos, Quaternion.identity);
-    }
-    
-    public void RegisterEnemy(GameObject enemy)
-    {
-        _enemies.Add(enemy);
     }
     
     public void RemoveEnemy(GameObject enemy)
     {
         _enemies.Remove(enemy);
     }
+    
 }

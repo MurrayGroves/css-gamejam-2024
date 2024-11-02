@@ -12,7 +12,6 @@ public class EnemyManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        InvokeRepeating("SpawnGhost", 0, 5);
         _camera = Camera.main;
     }
 
@@ -32,34 +31,7 @@ public class EnemyManager : MonoBehaviour
         return bounds;
     }
     
-    void SpawnGhost()
-    {
-        GameObject prefab = ghostPrefabs[Random.Range(0, ghostPrefabs.Count)];
-        Bounds bounds = OrthographicBounds(_camera);
-        int side = Random.Range(0, 4);
-        Vector3 spawnPos = Vector2.zero;
-        switch (side)
-        {
-            case 0:
-                spawnPos.x = bounds.min.x - 3;
-                spawnPos.y = Random.Range(bounds.min.y, bounds.max.y);
-                break;
-            case 1:
-                spawnPos.x = bounds.max.x + 3;
-                spawnPos.y = Random.Range(bounds.min.y, bounds.max.y);
-                break;
-            case 2:
-                spawnPos.y = bounds.min.y - 3;
-                spawnPos.x = Random.Range(bounds.min.x, bounds.max.x);
-                break;
-            case 3:
-                spawnPos.y = bounds.max.y + 3;
-                spawnPos.x = Random.Range(bounds.min.x, bounds.max.x);
-                break;
-        }
-        Instantiate(prefab, spawnPos, Quaternion.identity);
-    }
-    
+ 
     public void RegisterEnemy(GameObject enemy)
     {
         _enemies.Add(enemy);
