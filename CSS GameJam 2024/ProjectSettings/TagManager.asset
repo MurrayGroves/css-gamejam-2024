@@ -48,11 +48,11 @@ TagManager:
   - name: Enemies
     uniqueID: 683004713
     locked: 0
-  - name: Characters
-    uniqueID: 3625182141
-    locked: 0
   - name: Bullets
     uniqueID: 1570708631
+    locked: 0
+  - name: Characters
+    uniqueID: 3625182141
     locked: 0
   - name: Weapons
     uniqueID: 2555573973

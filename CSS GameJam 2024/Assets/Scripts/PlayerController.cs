@@ -8,7 +8,8 @@ public class PlayerController: MonoBehaviour
     public Rigidbody2D rb;
     public Camera cam;
     public GameObject weapon;
-
+    private Laser _laser;
+    
     private Vector2 movement;
     private Vector2 lookDir;
     
@@ -19,16 +20,34 @@ public class PlayerController: MonoBehaviour
         
         if (Keyboard.current.jKey.isPressed)
         {
-            weapon.GetComponent<Laser>().ShootLaser();
+            _laser.ShootLaserDamage();
         } else if (Keyboard.current.jKey.wasReleasedThisFrame)
         {
-            weapon.GetComponent<Laser>().RemoveLaser();
+            _laser.RemoveLaserDamage();
+        }
+        
+        if (Keyboard.current.kKey.isPressed)
+        {
+            _laser.ShootLaserPush();
+        } else if (Keyboard.current.kKey.wasReleasedThisFrame)
+        {
+            _laser.RemoveLaserPush();
         }
 
         if (movement.magnitude > 0)
         {
             lookDir = movement;
         }
+    }
+    
+    public void FetchLaser()
+    {
+        _laser = weapon.GetComponent<Laser>();
+    }
+
+    public void Awake()
+    {
+        FetchLaser();
     }
 
     private void FixedUpdate()
