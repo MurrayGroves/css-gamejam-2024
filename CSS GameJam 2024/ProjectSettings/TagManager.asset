@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -43,6 +44,9 @@ TagManager:
     locked: 0
   - name: Furniture
     uniqueID: 3842702319
+    locked: 0
+  - name: Enemies
+    uniqueID: 683004713
     locked: 0
   - name: Characters
     uniqueID: 3625182141

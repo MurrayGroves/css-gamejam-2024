@@ -64,4 +64,10 @@ crashlytics-build.properties
 
 CSS GameJam 2024/Library/ProtocolInstance.json
 CSS GameJam 2024/Library/PackageCache
-CSS GameJam 2024/Temp
+CSS GameJam 2024/Temp/*
+CSS GameJam 2024/Library/*
+CSS GameJam 2024/Logs/*
+
+CSS GameJam 2024/Logs/
+
+CSS GameJam 2024/Library/

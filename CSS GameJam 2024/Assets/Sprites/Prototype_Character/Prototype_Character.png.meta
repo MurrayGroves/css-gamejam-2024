@@ -147,7 +147,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -934,7 +934,40 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Prototype_Character_0: 4204462825853213970
+      Prototype_Character_1: 568041062025320553
+      Prototype_Character_10: 853397680033833842
+      Prototype_Character_11: 4608143492187045657
+      Prototype_Character_12: 6220858861574277583
+      Prototype_Character_13: -5973167300829599901
+      Prototype_Character_14: -8057241231717884692
+      Prototype_Character_15: -438983625347371468
+      Prototype_Character_16: -2839188231317876154
+      Prototype_Character_17: -399533449229871641
+      Prototype_Character_18: -9185101243627887082
+      Prototype_Character_19: 3065384865384407653
+      Prototype_Character_2: -503791482567544885
+      Prototype_Character_20: -6417389498304785568
+      Prototype_Character_21: 6321456513453464647
+      Prototype_Character_22: -8529125634833041867
+      Prototype_Character_23: 6093401678616500054
+      Prototype_Character_24: 42089226301931226
+      Prototype_Character_25: 645750959724923942
+      Prototype_Character_26: 4459046955688043368
+      Prototype_Character_27: -3820514933137529119
+      Prototype_Character_28: 3450549797093936518
+      Prototype_Character_29: -3756319758022986912
+      Prototype_Character_3: 6547078710005054899
+      Prototype_Character_30: -3930801429453175989
+      Prototype_Character_31: 7074775785105072111
+      Prototype_Character_32: 2443221173046045279
+      Prototype_Character_4: -3076343359149604810
+      Prototype_Character_5: 887968636905019607
+      Prototype_Character_6: -4466297215435451827
+      Prototype_Character_7: 1429746735672646936
+      Prototype_Character_8: 2751090733041089187
+      Prototype_Character_9: -4532745073843572937
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
