@@ -27,6 +27,10 @@ public class Laser : MonoBehaviour
         {
             Debug.Log(_hit.collider.name);
             Draw2DRay(firePoint.position, _hit.point);
+            if (_hit.collider.CompareTag("Enemy"))
+            {
+                _hit.collider.GetComponent<EnemyController>().Damage(firePoint.transform.right, 100, 20);
+            }
         }
         else
         {

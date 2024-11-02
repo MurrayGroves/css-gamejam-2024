@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BalthazarIDLE_0: 4786014314771181808
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
