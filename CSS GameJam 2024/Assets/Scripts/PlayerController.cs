@@ -53,6 +53,7 @@ public class PlayerController: MonoBehaviour
     private void FixedUpdate()
     {
         rb.AddForce(movement * (moveSpeed * Time.fixedDeltaTime));
+        cam.transform.position = new Vector3(rb.position.x, rb.position.y, -10);
         
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
         weapon.transform.rotation = Quaternion.Euler(0f, 0f, angle);
