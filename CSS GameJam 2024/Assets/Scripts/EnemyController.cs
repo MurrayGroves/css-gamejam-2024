@@ -1,9 +1,13 @@
+using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class EnemyController : MonoBehaviour
 {
     private GameObject player;
     private Rigidbody2D playerRB;
+    private SpawnManager spawnManager;
+    
     private float moveSpeed = 20f;
     private Rigidbody2D rb;
     private SpriteRenderer sr;
@@ -23,6 +27,8 @@ public class EnemyController : MonoBehaviour
         moveSpeed = Random.Range(0.8f*moveSpeed, 1.2f*moveSpeed);
         turnSpeed = Random.Range(0.5f*turnSpeed, 1.5f*turnSpeed);
         angleOffset = Random.Range(-1.0f*angleOffset, 1.0f*angleOffset);
+        spawnManager = GameObject.Find("GameMaster").GetComponent<SpawnManager>();
+        spawnManager.RegisterEnemy(gameObject);
     }
 
     // Update is called once per frame
@@ -33,16 +39,6 @@ public class EnemyController : MonoBehaviour
         rb.transform.rotation = Quaternion.Euler(0f, 0f, angle * (turnSpeed * Time.fixedDeltaTime));
         rb.AddForce(lookDir.normalized * (moveSpeed * Time.fixedDeltaTime));
         setColour(Color.white);
-    }
-    
-    public static Vector2 rotate(Vector2 v, float delta)
-    {
-        delta *= Mathf.Deg2Rad;
-        
-        return new Vector2(
-            v.x * Mathf.Cos(delta) - v.y * Mathf.Sin(delta),
-            v.x * Mathf.Sin(delta) + v.y * Mathf.Cos(delta)
-        );
     }
     
     private void decreaseHealth(int damage)
@@ -66,5 +62,10 @@ public class EnemyController : MonoBehaviour
         rb.AddForce(direction.normalized * (force * Time.fixedDeltaTime));
         decreaseHealth(damage);
         setColour(Color.red);
+    }
+
+    public void OnDestroy()
+    {
+        spawnManager.RemoveEnemy(gameObject);
     }
 }

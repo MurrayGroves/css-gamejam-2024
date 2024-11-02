@@ -10,20 +10,24 @@ public class PlayerController: MonoBehaviour
     public GameObject weapon;
 
     private Vector2 movement;
-    private Vector2 mousePos;
+    private Vector2 lookDir;
     
     void Update()
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
-        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
         
-        if (Mouse.current.leftButton.isPressed)
+        if (Keyboard.current.jKey.isPressed)
         {
             weapon.GetComponent<Laser>().ShootLaser();
-        } else if (Mouse.current.leftButton.wasReleasedThisFrame)
+        } else if (Keyboard.current.jKey.wasReleasedThisFrame)
         {
             weapon.GetComponent<Laser>().RemoveLaser();
+        }
+
+        if (movement.magnitude > 0)
+        {
+            lookDir = movement;
         }
     }
 
@@ -31,7 +35,6 @@ public class PlayerController: MonoBehaviour
     {
         rb.AddForce(movement * (moveSpeed * Time.fixedDeltaTime));
         
-        Vector2 lookDir = mousePos - rb.position;
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
         weapon.transform.rotation = Quaternion.Euler(0f, 0f, angle);
     }

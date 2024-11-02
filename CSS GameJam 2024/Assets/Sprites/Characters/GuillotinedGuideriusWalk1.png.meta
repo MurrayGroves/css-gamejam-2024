@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      GuillotinedGuideriusWalk1_0: -6273374422478643776
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
