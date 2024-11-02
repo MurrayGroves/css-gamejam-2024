@@ -5,32 +5,6 @@ using UnityEngine;
 public class EnemyManager : MonoBehaviour
 {
     private List<GameObject> _enemies = new();
-    private Camera _camera;
-    
-    public List<GameObject> ghostPrefabs;
-    
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        _camera = Camera.main;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public static Bounds OrthographicBounds(Camera camera)
-    {
-        float screenAspect = (float)Screen.width / (float)Screen.height;
-        float cameraHeight = camera.orthographicSize * 2;
-        Bounds bounds = new Bounds(
-            camera.transform.position,
-            new Vector3(cameraHeight * screenAspect, cameraHeight, 0));
-        return bounds;
-    }
-    
  
     public void RegisterEnemy(GameObject enemy)
     {
@@ -40,5 +14,15 @@ public class EnemyManager : MonoBehaviour
     public void RemoveEnemy(GameObject enemy)
     {
         _enemies.Remove(enemy);
+    }
+
+    public void ResetEnemies()
+    {
+        foreach (GameObject enemy in _enemies)
+        {
+            Destroy(enemy);
+        }
+        
+        _enemies.Clear();
     }
 }

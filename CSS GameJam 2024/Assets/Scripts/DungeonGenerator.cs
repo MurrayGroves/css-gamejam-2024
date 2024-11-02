@@ -54,7 +54,7 @@ public class DungeonGenerator : MonoBehaviour
         GenerateDungeon();
     }
 
-    void GenerateDungeon()
+    public void GenerateDungeon()
     {
         foreach (Cell cell in _cells)
         {

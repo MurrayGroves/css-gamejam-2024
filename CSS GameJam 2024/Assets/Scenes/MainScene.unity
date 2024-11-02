@@ -2214,7 +2214,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ece1e885d59d284d8838825a9502ab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ghostPrefabs: []
 --- !u!4 &1187823020
 Transform:
   m_ObjectHideFlags: 0
@@ -3121,7 +3120,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -2253911629886400664, guid: e5b5c658ff0377709a70f5567f996b06, type: 3}
       propertyPath: m_Name
-      value: BalthazarIDLE
+      value: Balthazar
       objectReference: {fileID: 0}
     - target: {fileID: 3626916397498700004, guid: e5b5c658ff0377709a70f5567f996b06, type: 3}
       propertyPath: m_SortingLayer

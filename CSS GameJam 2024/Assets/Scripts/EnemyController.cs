@@ -1,74 +1,87 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 public class EnemyController : MonoBehaviour
 {
-    private GameObject player;
-    private Rigidbody2D playerRB;
+    private GameObject _player;
+    private PlayerController _playerController;
+    private Rigidbody2D _playerRb;
     private EnemyManager _enemyManagerGlobal;
     
-    private float moveSpeed = 20f;
-    private Rigidbody2D rb;
-    private SpriteRenderer sr;
-    private static int maxHealth = 100;
-    private float health = maxHealth;
-    private float alpha = 1.0f;
-    private float turnSpeed = 1f;
-    private float angleOffset = 10f;
+    private float _moveSpeed = 20f;
+    private Rigidbody2D _rb;
+    private SpriteRenderer _sr;
+    public int maxHealth = 100;
+    private float _health;
+    private float _alpha = 1.0f;
+    private float _turnSpeed = 1f;
+    private float _angleOffset = 10f;
     
     public Spawner spawner;
+    public int damageToPlayer = 10;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {   
-        player = GameObject.Find("Player");
-        rb = GetComponent<Rigidbody2D>();
-        playerRB = player.GetComponent<Rigidbody2D>();
-        sr = GetComponent<SpriteRenderer>();
-        moveSpeed = Random.Range(0.8f*moveSpeed, 1.2f*moveSpeed);
-        turnSpeed = Random.Range(0.5f*turnSpeed, 1.5f*turnSpeed);
-        angleOffset = Random.Range(-1.0f*angleOffset, 1.0f*angleOffset);
+        _player = GameObject.Find("Player");
+        _rb = GetComponent<Rigidbody2D>();
+        _playerRb = _player.GetComponent<Rigidbody2D>();
+        _sr = GetComponent<SpriteRenderer>();
+        _moveSpeed = Random.Range(0.8f*_moveSpeed, 1.2f*_moveSpeed);
+        _turnSpeed = Random.Range(0.5f*_turnSpeed, 1.5f*_turnSpeed);
+        _angleOffset = Random.Range(-1.0f*_angleOffset, 1.0f*_angleOffset);
         _enemyManagerGlobal = GameObject.Find("GameMaster").GetComponent<EnemyManager>();
         _enemyManagerGlobal.RegisterEnemy(gameObject);
+        _playerController = _player.GetComponent<PlayerController>();
+        _health = maxHealth;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        Vector2 lookDir = playerRB.position - rb.position;
-        float angle = angleOffset + (Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg);
-        rb.transform.rotation = Quaternion.Euler(0f, 0f, angle * (turnSpeed * Time.fixedDeltaTime));
-        rb.AddForce(lookDir.normalized * (moveSpeed * Time.fixedDeltaTime));
-        setColour(Color.white);
+        Vector2 lookDir = _playerRb.position - _rb.position;
+        float angle = _angleOffset + (Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg);
+        _rb.transform.rotation = Quaternion.Euler(0f, 0f, angle * (_turnSpeed * Time.fixedDeltaTime));
+        _rb.AddForce(lookDir.normalized * (_moveSpeed * Time.fixedDeltaTime));
+        SetColour(Color.white);
     }
     
-    private void decreaseHealth(int damage, bool instant)
+    private void DecreaseHealth(int damage, bool instant)
     {
-        health -= damage * (instant ? 1 : Time.fixedDeltaTime);
-        alpha = 0.35f + (0.65f * (health / maxHealth));
-        if (health <= 0)
+        _health -= damage * (instant ? 1 : Time.fixedDeltaTime);
+        _alpha = 0.35f + (0.65f * (_health / maxHealth));
+        if (_health <= 0)
         {
             Destroy(gameObject);
         }
     }
 
-    private void setColour(Color colour)
+    private void SetColour(Color colour)
     {
-        colour.a = alpha;
-        sr.color = colour;
+        colour.a = _alpha;
+        _sr.color = colour;
     }
 
     public void Damage(Vector2 direction, int force, int damage, bool instant)
     {
-        rb.AddForce(direction.normalized * (force * ( !instant ? Time.fixedDeltaTime : 1)));
-        decreaseHealth(damage, instant);
-        setColour(Color.red);
+        _rb.AddForce(direction.normalized * (force * ( !instant ? Time.fixedDeltaTime : 1)));
+        DecreaseHealth(damage, instant);
+        SetColour(Color.red);
     }
 
     public void OnDestroy()
     {
         _enemyManagerGlobal.RemoveEnemy(gameObject);
         spawner.RemoveEnemy(gameObject);
+    }
+    
+    public void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            _playerController.DealDamage(damageToPlayer);
+        }
     }
 }

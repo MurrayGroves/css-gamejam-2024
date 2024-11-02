@@ -8,10 +8,13 @@ public class PlayerController: MonoBehaviour
     public Rigidbody2D rb;
     public Camera cam;
     public GameObject weapon;
+    public static int MaxHealth = 1000;
+
+    private int _health = MaxHealth;
     private Laser _laser;
-    
     private Vector2 movement;
     private Vector2 lookDir;
+    private SpriteRenderer _sr;
     
     void Update()
     {
@@ -48,14 +51,34 @@ public class PlayerController: MonoBehaviour
     public void Awake()
     {
         FetchLaser();
+        _sr = gameObject.GetComponentInChildren<SpriteRenderer>();  
     }
 
     private void FixedUpdate()
     {
+        _sr.color = new Color(1, 1, 1, 1);
+        
         rb.AddForce(movement * (moveSpeed * Time.fixedDeltaTime));
         cam.transform.position = new Vector3(rb.position.x, rb.position.y, -10);
         
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
         weapon.transform.rotation = Quaternion.Euler(0f, 0f, angle);
+    }
+    
+    public void DealDamage(int damage)
+    {
+        _health -= damage;
+        _sr.color = new Color(1, 0, 0, 1);
+        
+        if (_health <= 0)
+        {
+            _health = MaxHealth;
+            rb.position = new Vector2(5, -7);
+            GameObject gameMaster = GameObject.Find("GameMaster");
+            gameMaster.GetComponent<EnemyManager>().ResetEnemies();
+            DungeonGenerator dungeonGenerator = gameMaster.GetComponent<DungeonGenerator>();
+            dungeonGenerator.difficulty = 1;
+            dungeonGenerator.GenerateDungeon();
+        }
     }
 }
