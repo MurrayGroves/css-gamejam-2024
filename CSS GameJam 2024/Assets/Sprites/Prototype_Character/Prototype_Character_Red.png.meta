@@ -1,0 +1,942 @@
+fileFormatVersion: 2
+guid: 15cb5d21b3650683c8deb8ae8492130b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7722905385954629991
+    second: Prototype_Character_Red_0
+  - first:
+      213: -8751505951160519722
+    second: Prototype_Character_Red_1
+  - first:
+      213: 3843542236480899957
+    second: Prototype_Character_Red_2
+  - first:
+      213: -3890553729795870586
+    second: Prototype_Character_Red_3
+  - first:
+      213: 2073705967657214386
+    second: Prototype_Character_Red_4
+  - first:
+      213: -4113317242121034524
+    second: Prototype_Character_Red_5
+  - first:
+      213: 8302140966919232133
+    second: Prototype_Character_Red_6
+  - first:
+      213: -4251435414326824588
+    second: Prototype_Character_Red_7
+  - first:
+      213: 7549160586645134900
+    second: Prototype_Character_Red_8
+  - first:
+      213: 9204601122013727131
+    second: Prototype_Character_Red_9
+  - first:
+      213: 6229324623541530560
+    second: Prototype_Character_Red_10
+  - first:
+      213: -952975890749260614
+    second: Prototype_Character_Red_11
+  - first:
+      213: 7529352940031447141
+    second: Prototype_Character_Red_12
+  - first:
+      213: -3884664659147071270
+    second: Prototype_Character_Red_13
+  - first:
+      213: -2784141024978736950
+    second: Prototype_Character_Red_14
+  - first:
+      213: -3763407007215908557
+    second: Prototype_Character_Red_15
+  - first:
+      213: -1643320732562613221
+    second: Prototype_Character_Red_16
+  - first:
+      213: -145675291834031694
+    second: Prototype_Character_Red_17
+  - first:
+      213: -2039640257019679141
+    second: Prototype_Character_Red_18
+  - first:
+      213: 1075334631565018749
+    second: Prototype_Character_Red_19
+  - first:
+      213: -8413450691203885564
+    second: Prototype_Character_Red_20
+  - first:
+      213: 1067111639796477893
+    second: Prototype_Character_Red_21
+  - first:
+      213: 1679259885397463394
+    second: Prototype_Character_Red_22
+  - first:
+      213: 5451150896648127494
+    second: Prototype_Character_Red_23
+  - first:
+      213: 3517083963176086163
+    second: Prototype_Character_Red_24
+  - first:
+      213: -2682990241855855564
+    second: Prototype_Character_Red_25
+  - first:
+      213: 7685888906330014098
+    second: Prototype_Character_Red_26
+  - first:
+      213: 1370590007806509063
+    second: Prototype_Character_Red_27
+  - first:
+      213: 2668304687752564069
+    second: Prototype_Character_Red_28
+  - first:
+      213: -640169342552099522
+    second: Prototype_Character_Red_29
+  - first:
+      213: -2987102324356875124
+    second: Prototype_Character_Red_30
+  - first:
+      213: 8062741338037091303
+    second: Prototype_Character_Red_31
+  - first:
+      213: 6169588600965436310
+    second: Prototype_Character_Red_32
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Prototype_Character_Red_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 360
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 769d6c3e7854d2b60800000000000000
+      internalID: 7722905385954629991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prototype_Character_Red_1
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 360
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d33c5374b76c8680800000000000000
+      internalID: -8751505951160519722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prototype_Character_Red_2
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 328
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57b87a4dc41075530800000000000000
+      internalID: 3843542236480899957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prototype_Character_Red_3
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 328
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68032fbeef9f10ac0800000000000000
+      internalID: -3890553729795870586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prototype_Character_Red_4
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 296
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b1e0d2379847cc10800000000000000
+      internalID: 2073705967657214386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prototype_Character_Red_5
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 296
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e4e2e6f2cf8ae6c0800000000000000
+      internalID: -4113317242121034524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prototype_Character_Red_6
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 264
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58a50780931273370800000000000000
+      internalID: 8302140966919232133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prototype_Character_Red_7
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 264
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 471b887040edff4c0800000000000000
+      internalID: -4251435414326824588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prototype_Character_Red_8
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 264
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43edc5f6e8104c860800000000000000
+      internalID: 7549160586645134900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prototype_Character_Red_9
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 264
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b994ac0d3ff4dbf70800000000000000
+      internalID: 9204601122013727131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prototype_Character_Red_10
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 232
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cf69c0adb1037650800000000000000
+      internalID: 6229324623541530560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prototype_Character_Red_11
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 232
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abcf068f97956c2f0800000000000000
+      internalID: -952975890749260614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prototype_Character_Red_12
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 232
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5601e135b92ad7860800000000000000
+      internalID: 7529352940031447141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prototype_Character_Red_13
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 232
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad066080316e61ac0800000000000000
+      internalID: -3884664659147071270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prototype_Character_Red_14
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 200
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac8ec812d7ebc59d0800000000000000
+      internalID: -2784141024978736950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prototype_Character_Red_15
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 200
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3390ead2441b5cbc0800000000000000
+      internalID: -3763407007215908557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prototype_Character_Red_16
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 200
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1c129b1080c139e0800000000000000
+      internalID: -1643320732562613221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prototype_Character_Red_17
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 200
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b16ea908157afdf0800000000000000
+      internalID: -145675291834031694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prototype_Character_Red_18
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 168
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5e61c22efdb1b3e0800000000000000
+      internalID: -2039640257019679141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prototype_Character_Red_19
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 168
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d76cb19662b5cee00800000000000000
+      internalID: 1075334631565018749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prototype_Character_Red_20
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 136
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40617873c2b6d3b80800000000000000
+      internalID: -8413450691203885564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prototype_Character_Red_21
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 136
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cfe0c1f1642fce00800000000000000
+      internalID: 1067111639796477893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prototype_Character_Red_22
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 104
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 261ddaaf7fded4710800000000000000
+      internalID: 1679259885397463394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prototype_Character_Red_23
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 104
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60483cbebd066ab40800000000000000
+      internalID: 5451150896648127494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prototype_Character_Red_24
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 72
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39a655eea313fc030800000000000000
+      internalID: 3517083963176086163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prototype_Character_Red_25
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 72
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 434a752179a14cad0800000000000000
+      internalID: -2682990241855855564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prototype_Character_Red_26
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 72
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2918aec1d33c9aa60800000000000000
+      internalID: 7685888906330014098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prototype_Character_Red_27
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 40
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 700c104b950550310800000000000000
+      internalID: 1370590007806509063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prototype_Character_Red_28
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 40
+        width: 17
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56d400ae9f8b70520800000000000000
+      internalID: 2668304687752564069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prototype_Character_Red_29
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 40
+        width: 17
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e35361def59ad17f0800000000000000
+      internalID: -640169342552099522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prototype_Character_Red_30
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 8
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8cf6f8234eab86d0800000000000000
+      internalID: -2987102324356875124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prototype_Character_Red_31
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 8
+        width: 17
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ebfe89578c94ef60800000000000000
+      internalID: 8062741338037091303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prototype_Character_Red_32
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 8
+        width: 17
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69318da0528ce9550800000000000000
+      internalID: 6169588600965436310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
