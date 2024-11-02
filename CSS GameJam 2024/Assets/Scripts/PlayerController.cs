@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerController: MonoBehaviour
 {
-    public float moveSpeed = 5f;
+    public float moveSpeed = 1000000f;
     public Rigidbody2D rb;
     public Camera cam;
     public GameObject weapon;
@@ -29,7 +29,7 @@ public class PlayerController: MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.MovePosition(rb.position + movement * (moveSpeed * Time.fixedDeltaTime));
+        rb.AddForce(movement * (moveSpeed * Time.fixedDeltaTime));
         
         Vector2 lookDir = mousePos - rb.position;
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;

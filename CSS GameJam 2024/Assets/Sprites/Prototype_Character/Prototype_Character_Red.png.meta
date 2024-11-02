@@ -934,7 +934,40 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Prototype_Character_Red_0: 7722905385954629991
+      Prototype_Character_Red_1: -8751505951160519722
+      Prototype_Character_Red_10: 6229324623541530560
+      Prototype_Character_Red_11: -952975890749260614
+      Prototype_Character_Red_12: 7529352940031447141
+      Prototype_Character_Red_13: -3884664659147071270
+      Prototype_Character_Red_14: -2784141024978736950
+      Prototype_Character_Red_15: -3763407007215908557
+      Prototype_Character_Red_16: -1643320732562613221
+      Prototype_Character_Red_17: -145675291834031694
+      Prototype_Character_Red_18: -2039640257019679141
+      Prototype_Character_Red_19: 1075334631565018749
+      Prototype_Character_Red_2: 3843542236480899957
+      Prototype_Character_Red_20: -8413450691203885564
+      Prototype_Character_Red_21: 1067111639796477893
+      Prototype_Character_Red_22: 1679259885397463394
+      Prototype_Character_Red_23: 5451150896648127494
+      Prototype_Character_Red_24: 3517083963176086163
+      Prototype_Character_Red_25: -2682990241855855564
+      Prototype_Character_Red_26: 7685888906330014098
+      Prototype_Character_Red_27: 1370590007806509063
+      Prototype_Character_Red_28: 2668304687752564069
+      Prototype_Character_Red_29: -640169342552099522
+      Prototype_Character_Red_3: -3890553729795870586
+      Prototype_Character_Red_30: -2987102324356875124
+      Prototype_Character_Red_31: 8062741338037091303
+      Prototype_Character_Red_32: 6169588600965436310
+      Prototype_Character_Red_4: 2073705967657214386
+      Prototype_Character_Red_5: -4113317242121034524
+      Prototype_Character_Red_6: 8302140966919232133
+      Prototype_Character_Red_7: -4251435414326824588
+      Prototype_Character_Red_8: 7549160586645134900
+      Prototype_Character_Red_9: 9204601122013727131
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
