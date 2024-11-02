@@ -2800,6 +2800,50 @@ PrefabInstance:
       propertyPath: m_Name
       value: LaserGun
       objectReference: {fileID: 0}
+    - target: {fileID: 4717973774690008995, guid: 90d5cec64ee35038a943ee067b996214, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4717973774690008995, guid: 90d5cec64ee35038a943ee067b996214, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].time
+      value: 0.0360274
+      objectReference: {fileID: 0}
+    - target: {fileID: 4717973774690008995, guid: 90d5cec64ee35038a943ee067b996214, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[2].time
+      value: 0.9329568
+      objectReference: {fileID: 0}
+    - target: {fileID: 4717973774690008995, guid: 90d5cec64ee35038a943ee067b996214, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[3].time
+      value: 0.94692737
+      objectReference: {fileID: 0}
+    - target: {fileID: 4717973774690008995, guid: 90d5cec64ee35038a943ee067b996214, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].value
+      value: 0.5121448
+      objectReference: {fileID: 0}
+    - target: {fileID: 4717973774690008995, guid: 90d5cec64ee35038a943ee067b996214, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[2].value
+      value: 0.51572776
+      objectReference: {fileID: 0}
+    - target: {fileID: 4717973774690008995, guid: 90d5cec64ee35038a943ee067b996214, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[3].value
+      value: 0.1446541
+      objectReference: {fileID: 0}
+    - target: {fileID: 4717973774690008995, guid: 90d5cec64ee35038a943ee067b996214, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].inSlope
+      value: 0.07500007
+      objectReference: {fileID: 0}
+    - target: {fileID: 4717973774690008995, guid: 90d5cec64ee35038a943ee067b996214, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 4717973774690008995, guid: 90d5cec64ee35038a943ee067b996214, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].outSlope
+      value: 0.07500007
+      objectReference: {fileID: 0}
+    - target: {fileID: 4717973774690008995, guid: 90d5cec64ee35038a943ee067b996214, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].outWeight
+      value: 0.14668977
+      objectReference: {fileID: 0}
     - target: {fileID: 6245843639799123853, guid: 90d5cec64ee35038a943ee067b996214, type: 3}
       propertyPath: m_Parameters.numCapVertices
       value: 20
@@ -2810,11 +2854,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6245843639799123853, guid: 90d5cec64ee35038a943ee067b996214, type: 3}
       propertyPath: m_Parameters.colorGradient.key0.a
-      value: 0.78431374
+      value: 0.9019608
       objectReference: {fileID: 0}
     - target: {fileID: 6245843639799123853, guid: 90d5cec64ee35038a943ee067b996214, type: 3}
       propertyPath: m_Parameters.colorGradient.key1.a
-      value: 0.78431374
+      value: 0.9019608
       objectReference: {fileID: 0}
     - target: {fileID: 6245843639799123853, guid: 90d5cec64ee35038a943ee067b996214, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.size
@@ -2836,6 +2880,10 @@ PrefabInstance:
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[3].value
       value: 0.98113203
       objectReference: {fileID: 0}
+    - target: {fileID: 6845345993266681376, guid: 90d5cec64ee35038a943ee067b996214, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 5617675306597952580, guid: 533f918cd81c982b9a38323731cdcf8f, type: 3}
     - target: {fileID: 7737597320732702259, guid: 90d5cec64ee35038a943ee067b996214, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

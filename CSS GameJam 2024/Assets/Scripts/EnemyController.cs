@@ -43,9 +43,9 @@ public class EnemyController : MonoBehaviour
         setColour(Color.white);
     }
     
-    private void decreaseHealth(int damage)
+    private void decreaseHealth(int damage, bool instant)
     {
-        health -= damage * Time.fixedDeltaTime;
+        health -= damage * (instant ? 1 : Time.fixedDeltaTime);
         alpha = 0.35f + (0.65f * (health / maxHealth));
         if (health <= 0)
         {
@@ -59,10 +59,10 @@ public class EnemyController : MonoBehaviour
         sr.color = colour;
     }
 
-    public void Damage(Vector2 direction, int force, int damage)
+    public void Damage(Vector2 direction, int force, int damage, bool instant)
     {
-        rb.AddForce(direction.normalized * (force * Time.fixedDeltaTime));
-        decreaseHealth(damage);
+        rb.AddForce(direction.normalized * (force * ( !instant ? Time.fixedDeltaTime : 1)));
+        decreaseHealth(damage, instant);
         setColour(Color.red);
     }
 

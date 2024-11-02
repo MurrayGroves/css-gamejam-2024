@@ -75,7 +75,7 @@
       <option name="presentableId" value="Default" />
       <updated>1730540610838</updated>
       <workItem from="1730540616582" duration="8596000" />
-      <workItem from="1730553635568" duration="19367000" />
+      <workItem from="1730553635568" duration="23461000" />
     </task>
     <servers />
   </component>
@@ -97,10 +97,10 @@
           <line>48</line>
           <properties documentPath="$PROJECT_DIR$/Assets/Scripts/EnemyController.cs" containingFunctionPresentation="Method 'decreaseHealth'">
             <startOffsets>
-              <option value="1757" />
+              <option value="1787" />
             </startOffsets>
             <endOffsets>
-              <option value="1804" />
+              <option value="1834" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="2" />

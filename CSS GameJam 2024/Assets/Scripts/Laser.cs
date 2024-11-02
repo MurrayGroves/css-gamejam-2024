@@ -7,11 +7,15 @@ public class Laser : MonoBehaviour
     public  LineRenderer lineRendererDamage;
     public  LineRenderer lineRendererPush;
     public Transform firePoint;
-    private Transform m_transform;
-    LayerMask layerMask;
-    private Vector2 LocalDirection;
-    private Vector2 BoxExtents = new(2f, 2f);
-    private float angle;
+    public GameObject bulletPrefab;
+    
+    LayerMask _layerMask;
+    private Vector2 _localDirection;
+    private readonly Vector2 _boxExtents = new(2f, 2f);
+    private float _angle;
+    private bool _canShoot = true;
+    private bool _canPush = true;
+    private bool _isPushing = false;
     
     public static Vector2 rotate(Vector2 v, float delta) {
         return new Vector2(
@@ -22,9 +26,9 @@ public class Laser : MonoBehaviour
     void OnDrawGizmos()
 
     {
-        Vector2 rotatedBox = rotate(BoxExtents, Mathf.Deg2Rad * angle);
+        Vector2 rotatedBox = rotate(new Vector2(0.2f, 0.2f), Mathf.Deg2Rad * _angle);
         DrawBoxLines(transform.position, transform.position + new Vector3(
-            LocalDirection.x, LocalDirection.y, 0
+            _localDirection.x, _localDirection.y, 0
         ), rotatedBox, true);
     }
 
@@ -84,55 +88,82 @@ public class Laser : MonoBehaviour
     
     private void Awake()
     {
-        m_transform = GetComponent<Transform>();
-        layerMask = LayerMask.GetMask("Ignore Raycast");
-        layerMask = ~layerMask;
+        _layerMask = LayerMask.GetMask("Ignore Raycast");
+        _layerMask = ~_layerMask;
         lineRendererDamage.enabled = false;
         lineRendererPush.enabled = false;
     }
     
+    private void ResetPush()
+    {
+        _canPush = true;
+    }
 
-    public void ShootLaserPush()
+    private void FixedUpdate()
+    {
+        if (_isPushing)
+        {
+            ShootLaserPush();
+        }
+    }
+
+    private void StopPush()
+    {
+        _isPushing = false;
+        RemoveLaserPush();
+    }
+
+    public void TriggerLaserPush()
+    {
+        if (!_canPush)
+        {
+            return;
+        }
+        _isPushing = true;
+        _canPush = false;
+        Invoke(nameof(ResetPush), 10f);
+        Invoke(nameof(StopPush), 1f);
+    }
+    
+    private void ShootLaserPush()
     {
         lineRendererPush.enabled = true;
-        Debug.Log(layerMask.value);
 
-        angle = Vector2.SignedAngle(transform.right, new(1, 0));
-        LocalDirection = transform.right;
-        RaycastHit2D[] hit = Physics2D.BoxCastAll(firePoint.position, BoxExtents, angle, transform.right, defDistanceRay, layerMask);
+        _angle = Vector2.SignedAngle(transform.right, new(1, 0));
+        _localDirection = transform.right;
+        RaycastHit2D[] hit = Physics2D.BoxCastAll(transform.position, _boxExtents, _angle, transform.right, defDistanceRay, _layerMask);
         if (hit.Length > 0)
         {
             foreach (var h in hit)
             {
                 if (h.collider.CompareTag("Enemy"))
                 {
-                    h.collider.GetComponent<EnemyController>().Damage(firePoint.transform.right, 200, 0);
+                    h.collider.GetComponent<EnemyController>().Damage(transform.right, 500, 1, false);
                 }
             }
         }
 
-        Draw2DRay(lineRendererPush, firePoint.position, firePoint.transform.right * defDistanceRay);
+        Draw2DRay(lineRendererPush, transform.position, transform.right * defDistanceRay);
     }
 
+    private void ResetShoot()
+    {
+        _canShoot = true;
+    }
+    
     public void ShootLaserDamage()
     {
-        lineRendererDamage.enabled = true;
-
-        angle = Vector2.SignedAngle(transform.right, new(1, 0));
-        LocalDirection = transform.right;
-        RaycastHit2D hit = Physics2D.BoxCast(firePoint.position, new Vector2(0.1f, 0.1f), angle, transform.right, defDistanceRay, layerMask);
-        if (hit)
+        if (_canShoot)
         {
-            Draw2DRay(lineRendererDamage, transform.position, hit.point);
-            if (hit.collider.CompareTag("Enemy"))
-            {
-                hit.collider.GetComponent<EnemyController>().Damage(transform.right, 10, 100);
-            }
+            GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
+            LaserBullet controller = bullet.GetComponent<LaserBullet>();
+            controller.direction = transform.right;
+            controller.transform.rotation = transform.rotation;
+            controller.transform.position = transform.position;
+            _canShoot = false;
+            Invoke(nameof(ResetShoot), 0.1f);
         }
-        else
-        {
-            Draw2DRay(lineRendererDamage, transform.position, transform.right * defDistanceRay);
-        }   
+
     }
     
     public void RemoveLaserDamage()

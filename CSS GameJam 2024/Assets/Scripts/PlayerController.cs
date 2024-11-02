@@ -28,7 +28,7 @@ public class PlayerController: MonoBehaviour
         
         if (Keyboard.current.kKey.isPressed)
         {
-            _laser.ShootLaserPush();
+            _laser.TriggerLaserPush();
         } else if (Keyboard.current.kKey.wasReleasedThisFrame)
         {
             _laser.RemoveLaserPush();
