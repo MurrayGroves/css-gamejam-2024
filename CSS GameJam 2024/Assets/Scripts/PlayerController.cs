@@ -30,10 +30,9 @@ public class PlayerController: MonoBehaviour
     private void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement * (moveSpeed * Time.fixedDeltaTime));
-        weapon.GetComponentInParent<Rigidbody2D>().MovePosition(rb.position);
         
         Vector2 lookDir = mousePos - rb.position;
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
-        weapon.GetComponentInParent<Rigidbody2D>().rotation = angle;
+        weapon.transform.rotation = Quaternion.Euler(0f, 0f, angle);
     }
 }

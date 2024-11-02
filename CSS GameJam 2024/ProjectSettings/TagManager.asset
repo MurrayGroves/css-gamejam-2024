@@ -44,7 +44,7 @@ TagManager:
   - name: Characters
     uniqueID: 3625182141
     locked: 0
-  - name: New Layer 2
+  - name: Bullets
     uniqueID: 1570708631
     locked: 0
   m_RenderingLayers:
