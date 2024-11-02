@@ -119,10 +119,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
-<<<<<<< Updated upstream
---- !u!1001 &633306690
-PrefabInstance:
-=======
+
 --- !u!1 &136499982
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,10 +194,8 @@ RectTransform:
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &720005767
 GameObject:
->>>>>>> Stashed changes
   m_ObjectHideFlags: 0
   serializedVersion: 2
-<<<<<<< Updated upstream
   m_Modification:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
@@ -254,7 +249,6 @@ GameObject:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81bbc370cdfc0d2dc8d87790f2726456, type: 3}
-=======
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -978,7 +972,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
->>>>>>> Stashed changes
 --- !u!1001 &940858113
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1074,8 +1067,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
-<<<<<<< Updated upstream
-=======
+
 --- !u!1 &1011952209
 GameObject:
   m_ObjectHideFlags: 0
@@ -2170,7 +2162,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
->>>>>>> Stashed changes
 --- !u!1 &1134904084
 GameObject:
   m_ObjectHideFlags: 0
@@ -2370,8 +2361,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< Updated upstream
-=======
+
 --- !u!1 &1213939408
 GameObject:
   m_ObjectHideFlags: 0
@@ -2747,7 +2737,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> Stashed changes
+
 --- !u!1001 &1548320406
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3405,9 +3395,6 @@ SceneRoots:
   - {fileID: 1187823020}
   - {fileID: 940858113}
   - {fileID: 1779086724}
-<<<<<<< Updated upstream
   - {fileID: 633306690}
-=======
   - {fileID: 1498404661}
   - {fileID: 2141445091}
->>>>>>> Stashed changes
