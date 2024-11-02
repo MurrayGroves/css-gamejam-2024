@@ -1957,7 +1957,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -2371,6 +2371,42 @@ PrefabInstance:
     - target: {fileID: 3167600214758277573, guid: 90d5cec64ee35038a943ee067b996214, type: 3}
       propertyPath: m_Name
       value: LaserGun
+      objectReference: {fileID: 0}
+    - target: {fileID: 6245843639799123853, guid: 90d5cec64ee35038a943ee067b996214, type: 3}
+      propertyPath: m_Parameters.numCapVertices
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6245843639799123853, guid: 90d5cec64ee35038a943ee067b996214, type: 3}
+      propertyPath: m_Parameters.numCornerVertices
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6245843639799123853, guid: 90d5cec64ee35038a943ee067b996214, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.a
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 6245843639799123853, guid: 90d5cec64ee35038a943ee067b996214, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.a
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 6245843639799123853, guid: 90d5cec64ee35038a943ee067b996214, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6245843639799123853, guid: 90d5cec64ee35038a943ee067b996214, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[2].time
+      value: 0.96926725
+      objectReference: {fileID: 0}
+    - target: {fileID: 6245843639799123853, guid: 90d5cec64ee35038a943ee067b996214, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[3].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6245843639799123853, guid: 90d5cec64ee35038a943ee067b996214, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[2].value
+      value: 0.9811332
+      objectReference: {fileID: 0}
+    - target: {fileID: 6245843639799123853, guid: 90d5cec64ee35038a943ee067b996214, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[3].value
+      value: 0.98113203
       objectReference: {fileID: 0}
     - target: {fileID: 7737597320732702259, guid: 90d5cec64ee35038a943ee067b996214, type: 3}
       propertyPath: m_LocalPosition.x

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnManager : MonoBehaviour
+public class Spawner : MonoBehaviour
 {
     private List<GameObject> _enemies = new();
     private Camera _camera;
