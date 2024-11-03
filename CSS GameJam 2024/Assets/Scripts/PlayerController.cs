@@ -4,11 +4,12 @@ using UnityEngine.InputSystem;
 
 public class PlayerController: MonoBehaviour
 {
+    
     public float moveSpeed = 1000000f;
     public Rigidbody2D rb;
     public Camera cam;
     public GameObject weapon;
-    public int maxHealth = 1000;
+    public int maxHealth = 500;
     public float sapSpeed = 10;
     public float sapperHealth = 100;
     public int money = 0;
@@ -18,8 +19,8 @@ public class PlayerController: MonoBehaviour
     public Sprite lookRight;
     public Sprite lookDownRight;
     public Sprite lookDown;
-
-    private int _health;
+    
+    public int health;
     private Laser _laser;
     private Vector2 _movement;
     private Vector2 _lookDir;
@@ -28,7 +29,7 @@ public class PlayerController: MonoBehaviour
     
     private void Start()
     {
-        _health = maxHealth;
+        health = maxHealth;
     }
     
     private void Update()
@@ -130,10 +131,10 @@ public class PlayerController: MonoBehaviour
     
     public void DealDamage(int damage)
     {
-        _health -= damage;
+        health -= damage;
         _sr.color = new Color(1, 0, 0, 1);
         
-        if (_health <= 0)
+        if (health <= 0)
         {
             _dungeonGenerator.GenerateDungeon();
         }
@@ -141,7 +142,7 @@ public class PlayerController: MonoBehaviour
 
     public void Reset()
     {
-        _health = maxHealth;
+        health = maxHealth;
         rb.position = new Vector2(5, -7);
     }
     
