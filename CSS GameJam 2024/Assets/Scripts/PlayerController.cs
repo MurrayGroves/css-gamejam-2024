@@ -95,7 +95,7 @@ public class PlayerController: MonoBehaviour
     public Sprite lookDownRight;
     public Sprite lookDown;
     
-    public int health;
+    private int _health;
     private Laser _laser;
     private Vector2 _movement;
     private Vector2 _lookDir;
@@ -106,7 +106,6 @@ public class PlayerController: MonoBehaviour
     
     private void Start()
     {
-        health = maxHealth;
         _health = MaxHealth;
         List<GameObject> shopObjs = new List<GameObject>(GameObject.FindGameObjectsWithTag("Shop"));
         _upgradeShops = new Dictionary<GameObject, UpgradeShop>();
@@ -250,10 +249,10 @@ public class PlayerController: MonoBehaviour
     
     public void DealDamage(int damage)
     {
-        health -= damage;
+        _health -= damage;
         _sr.color = new Color(1, 0, 0, 1);
         
-        if (health <= 0)
+        if (_health <= 0)
         {
             _dungeonGenerator.GenerateDungeon();
         }
@@ -261,7 +260,6 @@ public class PlayerController: MonoBehaviour
 
     public void Reset()
     {
-        health = maxHealth;
         _health = MaxHealth;
         rb.position = new Vector2(0, -10);
     }
