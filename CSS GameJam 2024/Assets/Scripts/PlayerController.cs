@@ -10,6 +10,12 @@ public class PlayerController: MonoBehaviour
     public GameObject weapon;
     public static int MaxHealth = 1000;
 
+    public Sprite lookUp;
+    public Sprite lookUpRight;
+    public Sprite lookRight;
+    public Sprite lookDownRight;
+    public Sprite lookDown;
+
     private int _health = MaxHealth;
     private Laser _laser;
     private Vector2 movement;
@@ -40,6 +46,42 @@ public class PlayerController: MonoBehaviour
         if (movement.magnitude > 0)
         {
             lookDir = movement;
+        }
+
+        switch (lookDir.y)
+        {
+            case > 0 when lookDir.x == 0:
+                _sr.sprite = lookUp;
+                _sr.flipX = false;
+                break;
+            case > 0 when lookDir.x > 0:
+                _sr.sprite = lookUpRight;
+                _sr.flipX = false;
+                break;
+            case 0 when lookDir.x > 0:
+                _sr.sprite = lookRight;
+                _sr.flipX = false;
+                break;
+            case < 0 when lookDir.x > 0:
+                _sr.sprite = lookDownRight;
+                _sr.flipX = false;
+                break;
+            case < 0 when lookDir.x == 0:
+                _sr.sprite = lookDown;
+                _sr.flipX = false;
+                break;
+            case < 0 when lookDir.x < 0:
+                _sr.sprite = lookDownRight;
+                _sr.flipX = true;
+                break;
+            case 0 when lookDir.x < 0:
+                _sr.sprite = lookRight;
+                _sr.flipX = true;
+                break;
+            case > 0 when lookDir.x < 0:
+                _sr.sprite = lookUpRight;
+                _sr.flipX = true;
+                break;
         }
     }
     
