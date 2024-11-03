@@ -4,6 +4,7 @@ public class LaserBullet : MonoBehaviour
 {
     public float speed = 20f;
     public int damage = 10;
+    public int force = 10;
     public Vector2 direction;
 
     // Update is called once per frame
@@ -17,7 +18,7 @@ public class LaserBullet : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            other.GetComponent<EnemyController>().Damage(direction, 1, damage, true);
+            other.GetComponent<EnemyController>().Damage(direction, force, damage, true);
         }
         
         if (!other.CompareTag("Player"))

@@ -16,6 +16,7 @@ public class Laser : MonoBehaviour
     private bool _canShoot = true;
     private bool _canPush = true;
     private bool _isPushing = false;
+    private PlayerController _playerController;
     
     public static Vector2 rotate(Vector2 v, float delta) {
         return new Vector2(
@@ -92,6 +93,7 @@ public class Laser : MonoBehaviour
         _layerMask = ~_layerMask;
         lineRendererDamage.enabled = false;
         lineRendererPush.enabled = false;
+        _playerController = GameObject.Find("Player").GetComponent<PlayerController>();
     }
     
     private void ResetPush()
@@ -138,7 +140,7 @@ public class Laser : MonoBehaviour
             {
                 if (h.collider.CompareTag("Enemy"))
                 {
-                    h.collider.GetComponent<EnemyController>().Damage(transform.right, 500, 1, false);
+                    h.collider.GetComponent<EnemyController>().Damage(transform.right, _playerController.pushForce, _playerController.pushDamage, false);
                 }
             }
         }
@@ -160,6 +162,9 @@ public class Laser : MonoBehaviour
             controller.direction = transform.right;
             controller.transform.rotation = transform.rotation;
             controller.transform.position = transform.position;
+            controller.transform.localScale = new Vector3(_playerController.bulletWidth, 1, 1);
+            controller.damage = _playerController.bulletDamage;
+            controller.force = _playerController.bulletForce;
             _canShoot = false;
             Invoke(nameof(ResetShoot), 0.1f);
         }
