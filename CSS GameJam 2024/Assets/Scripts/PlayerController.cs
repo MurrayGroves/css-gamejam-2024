@@ -107,7 +107,6 @@ public class PlayerController: MonoBehaviour
     private void Start()
     {
         health = maxHealth;
-        _health = MaxHealth;
         List<GameObject> shopObjs = new List<GameObject>(GameObject.FindGameObjectsWithTag("Shop"));
         _upgradeShops = new Dictionary<GameObject, UpgradeShop>();
         foreach (GameObject shopObj in shopObjs)
@@ -242,9 +241,9 @@ public class PlayerController: MonoBehaviour
         float angle = Mathf.Atan2(_lookDir.y, _lookDir.x) * Mathf.Rad2Deg;
         weapon.transform.rotation = Quaternion.Euler(0f, 0f, angle);
         
-        if (_health < MaxHealth)
+        if (health < MaxHealth)
         {
-            _health += (int) (HealthRegen * Time.fixedDeltaTime);
+            health += (int) (HealthRegen * Time.fixedDeltaTime);
         }
     }
     
@@ -262,7 +261,7 @@ public class PlayerController: MonoBehaviour
     public void Reset()
     {
         health = maxHealth;
-        _health = MaxHealth;
+        health = MaxHealth;
         rb.position = new Vector2(0, -10);
     }
     
