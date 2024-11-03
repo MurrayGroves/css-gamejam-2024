@@ -127,8 +127,8 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.084590435, g: 0, b: 1, a: 0.5019608}
-      key1: {r: 0, g: 0.95156765, b: 1, a: 0.5019608}
+      key0: {r: 0.084590435, g: 0, b: 1, a: 0.9019608}
+      key1: {r: 0, g: 0.95156765, b: 1, a: 0.9019608}
       key2: {r: 0, g: 0, b: 0, a: 0.5019608}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -216,6 +216,7 @@ MonoBehaviour:
   lineRendererDamage: {fileID: 4717973774690008995}
   lineRendererPush: {fileID: 6245843639799123853}
   firePoint: {fileID: 7737597320732702259}
+  bulletPrefab: {fileID: 0}
 --- !u!1 &5217543803571872022
 GameObject:
   m_ObjectHideFlags: 0
