@@ -467,9 +467,9 @@ TilemapCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_MaximumTileChangeCount: 1000
+  m_MaximumTileChangeCount: 100
   m_ExtrusionFactor: 0
-  m_UseDelaunayMesh: 0
+  m_UseDelaunayMesh: 1
 --- !u!1 &5813327462464426470
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Spawner
+  - Shop
   layers:
   - Default
   - TransparentFX
