@@ -125,11 +125,14 @@ public class DungeonGenerator : MonoBehaviour
         float nearestDistance = float.MaxValue;
         foreach (Spawner spawner in spawners)
         {
-            float distance = Vector2.Distance(position, spawner.transform.position);
-            if (distance < nearestDistance)
+            if (spawner)
             {
-                nearestDistance = distance;
-                nearestSpawner = spawner;
+                float distance = Vector2.Distance(position, spawner.transform.position);
+                if (distance < nearestDistance)
+                {
+                    nearestDistance = distance;
+                    nearestSpawner = spawner;
+                }
             }
         }
 

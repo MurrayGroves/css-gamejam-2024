@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8571650002301264950}
   m_Layer: 0
   m_Name: Spawner
-  m_TagString: Untagged
+  m_TagString: Spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54,7 +54,7 @@ MonoBehaviour:
   maxSpawn: 0
   spawnInterval: 0
   beingSapped: 0
-  maxHealth: 100
+  maxHealth: 200
 --- !u!212 &4868104199189054099
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -10,6 +10,7 @@ public class PlayerController: MonoBehaviour
     public GameObject weapon;
     public int maxHealth = 1000;
     public float sapSpeed = 10;
+    public float sapperHealth = 100;
 
     public Sprite lookUp;
     public Sprite lookUpRight;
@@ -55,7 +56,7 @@ public class PlayerController: MonoBehaviour
             Tuple<Spawner, float> nearestSpawner = _dungeonGenerator.GetNearestSpawner(transform.position);
             if (nearestSpawner.Item2 < 2 && !nearestSpawner.Item1.beingSapped)
             {
-                nearestSpawner.Item1.StartSapping(sapSpeed);
+                nearestSpawner.Item1.StartSapping(sapSpeed, sapperHealth);
             }
         }
 

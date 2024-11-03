@@ -13,13 +13,15 @@ public class Spawner : MonoBehaviour
     // Seconds between each spawn
     public float spawnInterval;
     public bool beingSapped = false;
-    public int maxHealth = 100;
+    public int maxHealth = 200;
     
     private List<GameObject> _enemies = new();
-    private int spawnedCount = 0;
+    private int _spawnedCount = 0;
     private ParticleSystem _particleSystem;
     private float _health;
     private float _sapSpeed;
+    private float _sapperHealth;
+    private EnemyManager _enemyManagerGlobal;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -28,6 +30,7 @@ public class Spawner : MonoBehaviour
         _particleSystem = GetComponent<ParticleSystem>();
         _particleSystem.Stop();
         _health = maxHealth;
+        _enemyManagerGlobal = GameObject.Find("GameMaster").GetComponent<EnemyManager>();
     }
     
     private void Spawn()
@@ -38,11 +41,11 @@ public class Spawner : MonoBehaviour
             {
                 return;
             }
-            if (spawnedCount >= maxSpawn)
+            if (_spawnedCount >= maxSpawn)
             {
                 return;
             }
-            spawnedCount++;
+            _spawnedCount++;
             GameObject prefab = enemyPrefabs[Random.Range(0, enemyPrefabs.Count)];
             Vector2 offset = Random.insideUnitCircle;
             GameObject enemy = Instantiate(prefab, transform.position + new Vector3(offset.x, offset.y, 0), Quaternion.identity);
@@ -58,18 +61,61 @@ public class Spawner : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _health -= _sapSpeed * Time.fixedDeltaTime;
-        if (_health <= 0)
+        if (_sapperHealth <= 0 && beingSapped)
         {
-            Destroy(gameObject);
+            beingSapped = false;
+            _particleSystem.Stop();
+            _health = maxHealth;
+            _enemyManagerGlobal.StopDefendingSpawner();
+        }
+
+        if (beingSapped)
+        {
+            _health -= _sapSpeed * Time.fixedDeltaTime;
+            if (_health <= 0)
+            {
+                _enemyManagerGlobal.StopDefendingSpawner();
+                Destroy(gameObject);
+            }
         }
     }
 
-    public void StartSapping(float sapSpeed)
+    private void SpawnDefenders()
+    {
+        if (!beingSapped)
+        {
+            return;
+        }
+        
+        const int defendersCount = 10;
+        const float radius = 5;
+        const float angleStep = 360f / defendersCount;
+        for (var i = 0; i < 10; i++)
+        {
+            Vector2 offset = radius * (new Vector2(Mathf.Cos(i * angleStep), Mathf.Sin(i * angleStep)));
+            GameObject defender = Instantiate(enemyPrefabs[0], transform.position + new Vector3(offset.x, offset.y, 0), Quaternion.identity);
+            _enemies.Add(defender);
+            EnemyController enemyController = defender.GetComponent<EnemyController>();
+            enemyController.spawner = this;
+            enemyController.DefendSpawner(gameObject);
+        }
+        
+        Invoke(nameof(SpawnDefenders), 10);
+    }
+
+    public void StartSapping(float sapSpeed, float sapperHealth)
     {
         beingSapped = true;
         CancelInvoke(nameof(Spawn));
         _particleSystem.Play();
         _sapSpeed = sapSpeed;
+        _sapperHealth = sapperHealth;
+        SpawnDefenders();
+        _enemyManagerGlobal.DefendSpawner(gameObject);
+    }
+    
+    public void DamageSapper(float damage)
+    {
+        _sapperHealth -= damage;
     }
 }

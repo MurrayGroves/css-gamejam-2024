@@ -13,14 +13,17 @@ public class EnemyController : MonoBehaviour
     private float _moveSpeed = 20f;
     private Rigidbody2D _rb;
     private SpriteRenderer _sr;
-    public int maxHealth = 100;
     private float _health;
     private float _alpha = 1.0f;
     private float _turnSpeed = 1f;
     private float _angleOffset = 10f;
+    private bool _defendingSpawner = false;
+    private GameObject _spawnerToDefend;
     
     public Spawner spawner;
     public int damageToPlayer = 10;
+    public int maxHealth = 100;
+    public int damageToSapper = 10;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -38,10 +41,10 @@ public class EnemyController : MonoBehaviour
         _health = maxHealth;
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
-        Vector2 lookDir = _playerRb.position - _rb.position;
+        Vector2 target = _defendingSpawner ? _spawnerToDefend.transform.position : _playerRb.position;
+        Vector2 lookDir = target - _rb.position;
         float angle = _angleOffset + (Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg);
         _rb.transform.rotation = Quaternion.Euler(0f, 0f, angle * (_turnSpeed * Time.fixedDeltaTime));
         _rb.AddForce(lookDir.normalized * (_moveSpeed * Time.fixedDeltaTime));
@@ -83,5 +86,21 @@ public class EnemyController : MonoBehaviour
         {
             _playerController.DealDamage(damageToPlayer);
         }
+
+        if (other.CompareTag("Spawner"))
+        {
+            other.GetComponent<Spawner>().DamageSapper(damageToSapper * Time.fixedDeltaTime);
+        }
+    }
+    
+    public void DefendSpawner(GameObject spawner)
+    {
+        _defendingSpawner = true;
+        _spawnerToDefend = spawner;
+    }
+    
+    public void StopDefendingSpawner()
+    {
+        _defendingSpawner = false;
     }
 }
