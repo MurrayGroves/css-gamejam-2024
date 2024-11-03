@@ -128,6 +128,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 136499983}
+  - component: {fileID: 136499984}
+  - component: {fileID: 136499985}
   m_Layer: 5
   m_Name: HealthBarParent
   m_TagString: Untagged
@@ -151,9 +153,47 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.078, y: 1}
   m_AnchorMax: {x: 0.078, y: 1}
-  m_AnchoredPosition: {x: 78, y: -26.000767}
-  m_SizeDelta: {x: 158.6102, y: 50.978}
+  m_AnchoredPosition: {x: 250.9, y: -26.000767}
+  m_SizeDelta: {x: 500, y: 50.978}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &136499984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 136499982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad5d9908fe998e14b9daceaec56491a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heartPrefab: {fileID: 2474304990246001466, guid: 031b60c2fb07a7946917f6d635d7333d, type: 3}
+  playerController: {fileID: 1587783392}
+--- !u!114 &136499985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 136499982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 50, y: 50}
+  m_Spacing: {x: 0, y: 0}
+  m_Constraint: 0
+  m_ConstraintCount: 2
 --- !u!1 &627183527
 GameObject:
   m_ObjectHideFlags: 0
@@ -2845,8 +2885,8 @@ MonoBehaviour:
   speed: 20000
   healthRegenBase: 10
   healthRegen: 10
-  bulletWidthBase: 1
-  bulletWidth: 1
+  bulletWidthBase: 0.35
+  bulletWidth: 0.35
   lookUp: {fileID: -2490880404132303118, guid: 894f2f47215f35110a8d7212332d811c, type: 3}
   lookUpRight: {fileID: -9132236185153187617, guid: cb8ada22e9238dcadbf1723b02ac9a4b, type: 3}
   lookRight: {fileID: 7815866929885662937, guid: c58f5cc0fd33a54b3b3f9dff621e6d75, type: 3}

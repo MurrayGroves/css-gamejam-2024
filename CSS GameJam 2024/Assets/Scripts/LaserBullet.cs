@@ -13,6 +13,16 @@ public class LaserBullet : MonoBehaviour
         Vector3 newPos = transform.position + new Vector3(direction.x, direction.y, 0) * (speed * Time.deltaTime);
         transform.position = newPos;
     }
+
+    void DestroySelf()
+    {
+        Destroy(gameObject);
+    }
+
+    void Start()
+    {
+        Invoke("DestroySelf", 20f);
+    }
     
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -21,9 +31,10 @@ public class LaserBullet : MonoBehaviour
             other.GetComponent<EnemyController>().Damage(direction, force, damage, true);
         }
         
-        if (!other.CompareTag("Player"))
+        if (!other.CompareTag("Player") && !other.CompareTag("Spawner"))
         {
             Destroy(gameObject);
+            CancelInvoke();
         }
     }
 }

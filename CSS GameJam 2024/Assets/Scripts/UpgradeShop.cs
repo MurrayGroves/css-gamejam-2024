@@ -69,35 +69,49 @@ public class UpgradeShop : MonoBehaviour
         if (_playerController.money >= cost)
         {
             _playerController.money -= cost;
+            _playerController.Upgrades[upgradeType]++;
             switch (upgradeType)
             {
                 case UpgradeType.MaxHealth:
-                    _playerController.MaxHealth = (int)(_playerController.maxHealthBase * (1 + multiplier*_playerController.Upgrades[UpgradeType.MaxHealth]));
+                    _playerController.MaxHealth = (int)(_playerController.maxHealthBase *
+                                                        (1 + multiplier *
+                                                            _playerController.Upgrades[UpgradeType.MaxHealth]));
                     break;
                 case UpgradeType.BulletDamage:
-                    _playerController.BulletDamage = (int)(_playerController.bulletDamageBase * (1 + multiplier*_playerController.Upgrades[UpgradeType.BulletDamage]));
+                    _playerController.BulletDamage = (int)(_playerController.bulletDamageBase *
+                                                           (1 + multiplier *
+                                                               _playerController.Upgrades[UpgradeType.BulletDamage]));
                     break;
                 case UpgradeType.BulletForce:
-                    _playerController.BulletForce = (int)(_playerController.bulletForceBase * (1 + multiplier*_playerController.Upgrades[UpgradeType.BulletForce]));
+                    _playerController.BulletForce = (int)(_playerController.bulletForceBase *
+                                                          (1 + multiplier *
+                                                              _playerController.Upgrades[UpgradeType.BulletForce]));
                     break;
                 case UpgradeType.PushDamage:
-                    _playerController.PushDamage = (int)(_playerController.pushDamageBase * (1 + multiplier*_playerController.Upgrades[UpgradeType.PushDamage]));
+                    _playerController.PushDamage = (int)(_playerController.pushDamageBase *
+                                                         (1 + multiplier *
+                                                             _playerController.Upgrades[UpgradeType.PushDamage]));
                     break;
                 case UpgradeType.PushForce:
-                    _playerController.PushForce = (int)(_playerController.pushForceBase * (1 + multiplier*_playerController.Upgrades[UpgradeType.PushForce]));
+                    _playerController.PushForce = (int)(_playerController.pushForceBase *
+                                                        (1 + multiplier *
+                                                            _playerController.Upgrades[UpgradeType.PushForce]));
                     break;
                 case UpgradeType.Speed:
-                    _playerController.Speed = (int)(_playerController.speedBase * (1 + multiplier*_playerController.Upgrades[UpgradeType.Speed]));
+                    _playerController.Speed = (int)(_playerController.speedBase *
+                                                    (1 + multiplier * _playerController.Upgrades[UpgradeType.Speed]));
                     break;
                 case UpgradeType.HealthRegen:
-                    _playerController.HealthRegen = (int)(_playerController.healthRegenBase * (1 + multiplier*_playerController.Upgrades[UpgradeType.HealthRegen]));
+                    _playerController.HealthRegen = (_playerController.healthRegenBase *
+                                                          (1 + multiplier *
+                                                              _playerController.Upgrades[UpgradeType.HealthRegen]));
                     break;
                 case UpgradeType.BulletWidth:
-                    _playerController.BulletWidth = (int)(_playerController.bulletWidthBase * (1 + multiplier*_playerController.Upgrades[UpgradeType.BulletWidth]));
+                    _playerController.BulletWidth = (_playerController.bulletWidthBase *
+                                                          (1 + multiplier *
+                                                              _playerController.Upgrades[UpgradeType.BulletWidth]));
                     break;
             }
-            _descText.text = EnumToTitle[upgradeType] + " +" + String.Format("Value: {0:P0}.", multiplier);
-            _costText.text = "Cost: " + cost;
         }
     }
 }

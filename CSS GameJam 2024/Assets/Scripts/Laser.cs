@@ -162,7 +162,7 @@ public class Laser : MonoBehaviour
             controller.direction = transform.right;
             controller.transform.rotation = transform.rotation;
             controller.transform.position = transform.position;
-            controller.transform.localScale = new Vector3(_playerController.bulletWidth, 1, 1);
+            controller.GetComponent<LineRenderer>().widthMultiplier = _playerController.bulletWidth;
             controller.damage = _playerController.bulletDamage;
             controller.force = _playerController.bulletForce;
             _canShoot = false;

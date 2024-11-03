@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefabs:
-  - {fileID: 5023320172698032204, guid: a92586244bd307643ac096ef2dcff9ab, type: 3}
+  - {fileID: 6129841574202626666, guid: 982fdd7a7cfe83302a80f932e07ead31, type: 3}
   - {fileID: 3983452358715826720, guid: 73c44303d42f1524da49c00af7de2c2d, type: 3}
   maxAlive: 0
   spawnGroupSize: 0

@@ -33,6 +33,7 @@ public class DungeonGenerator : MonoBehaviour
     public int difficulty = 1;
 
     private List<Cell> _cells;
+    private EnemyManager _enemyManager;
     
     public CellSide OppositeSide(CellSide side)
     {
@@ -50,11 +51,13 @@ public class DungeonGenerator : MonoBehaviour
     void Start()
     {
         _cells = new List<Cell>();
+        _enemyManager = GameObject.Find("GameMaster").GetComponent<EnemyManager>();
         GenerateDungeon();
     }
 
     public void GenerateDungeon()
     {
+        _enemyManager.ResetEnemies();
         PlayerController player = GameObject.Find("Player").GetComponent<PlayerController>();
         player.Reset();
         

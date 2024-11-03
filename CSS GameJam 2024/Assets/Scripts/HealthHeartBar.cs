@@ -21,11 +21,25 @@ public class HealthHeartBar : MonoBehaviour
         {
             CreateEmptyHeart();
         }
+    }
 
+    public void Update()
+    {
         for (int i = 0; i < hearts.Count; i++)
         {
-            int heartStatusRemainder = (int)Mathf.Clamp(playerController.health - (i * 2), 0, 2);
-            hearts[i].SetHeartImage((HeartStatus)heartStatusRemainder);
+            float ratio = ((float)i) / hearts.Count;
+            float halfRatio = (i + 0.5f) / hearts.Count;
+
+            if (playerController.health < ratio*playerController.maxHealth)
+            {
+                hearts[i].SetHeartImage(HeartStatus.Empty);
+            } else if (playerController.health < halfRatio*playerController.maxHealth)
+            {
+                hearts[i].SetHeartImage(HeartStatus.Half);
+            } else
+            {
+                hearts[i].SetHeartImage(HeartStatus.Full);
+            }
         }
     }
     

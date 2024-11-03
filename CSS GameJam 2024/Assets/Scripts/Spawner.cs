@@ -93,7 +93,7 @@ public class Spawner : MonoBehaviour
         for (var i = 0; i < 10; i++)
         {
             Vector2 offset = radius * (new Vector2(Mathf.Cos(i * angleStep), Mathf.Sin(i * angleStep)));
-            GameObject defender = Instantiate(enemyPrefabs[0], transform.position + new Vector3(offset.x, offset.y, 0), Quaternion.identity);
+            GameObject defender = Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Count)], transform.position + new Vector3(offset.x, offset.y, 0), Quaternion.identity);
             _enemies.Add(defender);
             EnemyController enemyController = defender.GetComponent<EnemyController>();
             enemyController.spawner = this;

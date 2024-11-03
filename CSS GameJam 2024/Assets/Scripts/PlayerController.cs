@@ -13,14 +13,19 @@ public class PlayerController: MonoBehaviour
     public float sapperHealth = 100;
     public int money = 0;
 
-    public int maxHealthBase = 500;
+    public int maxHealthBase = 500 ;
     public int maxHealth;
     public int MaxHealth
     {
         get => maxHealth;
-        set => maxHealth = value;
+        set
+        {
+            maxHealth = value;
+            _healthHeartBar.ClearHearts();
+            _healthHeartBar.DrawHearts();
+        }
     }
-    
+
     public int bulletDamageBase = 10;
     public int bulletDamage = 10;
     public int BulletDamage
@@ -61,17 +66,17 @@ public class PlayerController: MonoBehaviour
         set => speed = value;
     }
     
-    public int healthRegenBase = 1;
-    public int healthRegen = 1;
-    public int HealthRegen
+    public float healthRegenBase = 1;
+    public float healthRegen = 1;
+    public float HealthRegen
     {
         get => healthRegen;
         set => healthRegen = value;
     }
     
-    public int bulletWidthBase = 1;
-    public int bulletWidth = 1;
-    public int BulletWidth
+    public float bulletWidthBase = 0.35f;
+    public float bulletWidth = 0.35f;
+    public float BulletWidth
     {
         get => bulletWidth;
         set => bulletWidth = value;
@@ -95,7 +100,7 @@ public class PlayerController: MonoBehaviour
     public Sprite lookDownRight;
     public Sprite lookDown;
     
-    public int health;
+    public float health;
     private Laser _laser;
     private Vector2 _movement;
     private Vector2 _lookDir;
@@ -103,6 +108,7 @@ public class PlayerController: MonoBehaviour
     private DungeonGenerator _dungeonGenerator;
     private Dictionary<GameObject, UpgradeShop> _upgradeShops;
     private bool _buyCooldown = false;
+    private HealthHeartBar _healthHeartBar;
     
     private void Start()
     {
@@ -113,6 +119,9 @@ public class PlayerController: MonoBehaviour
         {
             _upgradeShops.Add(shopObj, shopObj.GetComponent<UpgradeShop>());
         }
+
+        GameObject hudParent = GameObject.Find("HUD Parent");
+        _healthHeartBar = hudParent.GetComponentInChildren<HealthHeartBar>();
     }
     
     private Tuple<GameObject, UpgradeShop, float> GetNearestShop(Vector2 position)
@@ -243,7 +252,7 @@ public class PlayerController: MonoBehaviour
         
         if (health < MaxHealth)
         {
-            health += (int) (HealthRegen * Time.fixedDeltaTime);
+            health += HealthRegen * Time.fixedDeltaTime;
         }
     }
     
@@ -261,6 +270,7 @@ public class PlayerController: MonoBehaviour
     public void Reset()
     {
         health = MaxHealth;
+        
         rb.position = new Vector2(0, -10);
     }
     
