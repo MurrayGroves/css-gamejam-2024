@@ -8,7 +8,8 @@ public class PlayerController: MonoBehaviour
     public Rigidbody2D rb;
     public Camera cam;
     public GameObject weapon;
-    public static int MaxHealth = 1000;
+    public int maxHealth = 1000;
+    public float sapSpeed = 10;
 
     public Sprite lookUp;
     public Sprite lookUpRight;
@@ -16,16 +17,22 @@ public class PlayerController: MonoBehaviour
     public Sprite lookDownRight;
     public Sprite lookDown;
 
-    private int _health = MaxHealth;
+    private int _health;
     private Laser _laser;
-    private Vector2 movement;
-    private Vector2 lookDir;
+    private Vector2 _movement;
+    private Vector2 _lookDir;
     private SpriteRenderer _sr;
+    private DungeonGenerator _dungeonGenerator;
     
-    void Update()
+    private void Start()
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+        _health = maxHealth;
+    }
+    
+    private void Update()
+    {
+        _movement.x = Input.GetAxisRaw("Horizontal");
+        _movement.y = Input.GetAxisRaw("Vertical");
         
         if (Keyboard.current.jKey.isPressed)
         {
@@ -43,42 +50,51 @@ public class PlayerController: MonoBehaviour
             _laser.RemoveLaserPush();
         }
 
-        if (movement.magnitude > 0)
+        if (Keyboard.current.lKey.wasPressedThisFrame)
         {
-            lookDir = movement;
+            Tuple<Spawner, float> nearestSpawner = _dungeonGenerator.GetNearestSpawner(transform.position);
+            if (nearestSpawner.Item2 < 2 && !nearestSpawner.Item1.beingSapped)
+            {
+                nearestSpawner.Item1.StartSapping(sapSpeed);
+            }
         }
 
-        switch (lookDir.y)
+        if (_movement.magnitude > 0)
         {
-            case > 0 when lookDir.x == 0:
+            _lookDir = _movement;
+        }
+
+        switch (_lookDir.y)
+        {
+            case > 0 when _lookDir.x == 0:
                 _sr.sprite = lookUp;
                 _sr.flipX = false;
                 break;
-            case > 0 when lookDir.x > 0:
+            case > 0 when _lookDir.x > 0:
                 _sr.sprite = lookUpRight;
                 _sr.flipX = false;
                 break;
-            case 0 when lookDir.x > 0:
+            case 0 when _lookDir.x > 0:
                 _sr.sprite = lookRight;
                 _sr.flipX = false;
                 break;
-            case < 0 when lookDir.x > 0:
+            case < 0 when _lookDir.x > 0:
                 _sr.sprite = lookDownRight;
                 _sr.flipX = false;
                 break;
-            case < 0 when lookDir.x == 0:
+            case < 0 when _lookDir.x == 0:
                 _sr.sprite = lookDown;
                 _sr.flipX = false;
                 break;
-            case < 0 when lookDir.x < 0:
+            case < 0 when _lookDir.x < 0:
                 _sr.sprite = lookDownRight;
                 _sr.flipX = true;
                 break;
-            case 0 when lookDir.x < 0:
+            case 0 when _lookDir.x < 0:
                 _sr.sprite = lookRight;
                 _sr.flipX = true;
                 break;
-            case > 0 when lookDir.x < 0:
+            case > 0 when _lookDir.x < 0:
                 _sr.sprite = lookUpRight;
                 _sr.flipX = true;
                 break;
@@ -94,16 +110,19 @@ public class PlayerController: MonoBehaviour
     {
         FetchLaser();
         _sr = gameObject.GetComponentInChildren<SpriteRenderer>();  
+        GameObject gameMaster = GameObject.Find("GameMaster");
+        gameMaster.GetComponent<EnemyManager>().ResetEnemies();
+        _dungeonGenerator = gameMaster.GetComponent<DungeonGenerator>();
     }
 
     private void FixedUpdate()
     {
         _sr.color = new Color(1, 1, 1, 1);
         
-        rb.AddForce(movement * (moveSpeed * Time.fixedDeltaTime));
+        rb.AddForce(_movement * (moveSpeed * Time.fixedDeltaTime));
         cam.transform.position = new Vector3(rb.position.x, rb.position.y, -10);
         
-        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
+        float angle = Mathf.Atan2(_lookDir.y, _lookDir.x) * Mathf.Rad2Deg;
         weapon.transform.rotation = Quaternion.Euler(0f, 0f, angle);
     }
     
@@ -114,13 +133,13 @@ public class PlayerController: MonoBehaviour
         
         if (_health <= 0)
         {
-            _health = MaxHealth;
-            rb.position = new Vector2(5, -7);
-            GameObject gameMaster = GameObject.Find("GameMaster");
-            gameMaster.GetComponent<EnemyManager>().ResetEnemies();
-            DungeonGenerator dungeonGenerator = gameMaster.GetComponent<DungeonGenerator>();
-            dungeonGenerator.difficulty = 1;
-            dungeonGenerator.GenerateDungeon();
+            _dungeonGenerator.GenerateDungeon();
         }
+    }
+
+    public void Reset()
+    {
+        _health = maxHealth;
+        rb.position = new Vector2(5, -7);
     }
 }

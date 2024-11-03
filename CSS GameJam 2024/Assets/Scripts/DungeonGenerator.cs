@@ -13,8 +13,6 @@ public enum CellSide
     Left
 }
 
-
-
 public class Cell
 {
     public Dictionary<CellSide, bool> connectorsUsed = new()
@@ -25,6 +23,7 @@ public class Cell
         {CellSide.Left, false}
     };
     public GameObject room;
+    public List<Spawner> spawners = new List<Spawner>();
 }
 
 public class DungeonGenerator : MonoBehaviour
@@ -56,6 +55,9 @@ public class DungeonGenerator : MonoBehaviour
 
     public void GenerateDungeon()
     {
+        PlayerController player = GameObject.Find("Player").GetComponent<PlayerController>();
+        player.Reset();
+        
         foreach (Cell cell in _cells)
         {
             if (cell.room != lobby)
@@ -89,6 +91,7 @@ public class DungeonGenerator : MonoBehaviour
             toJoin.connectorsUsed[side] = true;
             Cell newCell = new Cell();
             newCell.room = Instantiate(roomPrefabs[Random.Range(0, roomPrefabs.Length)]);
+            newCell.spawners = newCell.room.GetComponentsInChildren<Spawner>().ToList();
             newCell.connectorsUsed[OppositeSide(side)] = true;
             switch (side)
             {
@@ -107,6 +110,51 @@ public class DungeonGenerator : MonoBehaviour
             }
             
             _cells.Add(newCell);
+        }
+    }
+
+    public Tuple<Spawner, float> GetNearestSpawner(Vector2 position)
+    {
+        List<Spawner> spawners = new();
+        foreach (Cell cell in _cells)
+        {
+            spawners.AddRange(cell.spawners);
+        }
+        
+        Spawner nearestSpawner = null;
+        float nearestDistance = float.MaxValue;
+        foreach (Spawner spawner in spawners)
+        {
+            float distance = Vector2.Distance(position, spawner.transform.position);
+            if (distance < nearestDistance)
+            {
+                nearestDistance = distance;
+                nearestSpawner = spawner;
+            }
+        }
+
+        return new Tuple<Spawner, float>(nearestSpawner, nearestDistance);
+    }
+
+    private void FixedUpdate()
+    {
+        bool allSpawnersDestroyed = true;
+        foreach (Cell cell in _cells)
+        {
+            foreach (Spawner spawner in cell.spawners)
+            {
+                if (spawner)
+                {
+                    allSpawnersDestroyed = false;
+                    break;
+                }
+            }
+        }
+        
+        if (allSpawnersDestroyed)
+        {
+            difficulty++;
+            GenerateDungeon();
         }
     }
 }

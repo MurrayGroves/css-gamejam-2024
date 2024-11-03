@@ -2842,6 +2842,8 @@ MonoBehaviour:
   rb: {fileID: 1587783391}
   cam: {fileID: 1134904086}
   weapon: {fileID: 1548320407}
+  maxHealth: 1000
+  sapSpeed: 10
   lookUp: {fileID: -2490880404132303118, guid: 894f2f47215f35110a8d7212332d811c, type: 3}
   lookUpRight: {fileID: -9132236185153187617, guid: cb8ada22e9238dcadbf1723b02ac9a4b, type: 3}
   lookRight: {fileID: 7815866929885662937, guid: c58f5cc0fd33a54b3b3f9dff621e6d75, type: 3}
@@ -2898,7 +2900,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.0039673448, y: 0.4920653}
+  m_Offset: {x: -0.02515459, y: 0.48147202}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2908,7 +2910,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.5968493, y: 0.92065334}
+  m_Size: {x: 0.4612522, y: 0.7469187}
   m_EdgeRadius: 0
 --- !u!1 &1644228161
 GameObject:
