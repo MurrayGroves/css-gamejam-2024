@@ -13,7 +13,7 @@ public class PlayerController: MonoBehaviour
     public float sapperHealth = 100;
     public int money = 0;
 
-    public int maxHealthBase = 1000;
+    public int maxHealthBase = 500;
     public int maxHealth;
     public int MaxHealth
     {
@@ -106,7 +106,7 @@ public class PlayerController: MonoBehaviour
     
     private void Start()
     {
-        health = maxHealth;
+        health = MaxHealth;
         List<GameObject> shopObjs = new List<GameObject>(GameObject.FindGameObjectsWithTag("Shop"));
         _upgradeShops = new Dictionary<GameObject, UpgradeShop>();
         foreach (GameObject shopObj in shopObjs)
@@ -260,7 +260,6 @@ public class PlayerController: MonoBehaviour
 
     public void Reset()
     {
-        health = maxHealth;
         health = MaxHealth;
         rb.position = new Vector2(0, -10);
     }

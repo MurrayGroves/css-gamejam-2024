@@ -2231,6 +2231,7 @@ MonoBehaviour:
   roomPrefabs:
   - {fileID: 5813327462464426470, guid: 81bbc370cdfc0d2dc8d87790f2726456, type: 3}
   - {fileID: 5813327462464426470, guid: 7d8f669533006c58e99740715cfb8529, type: 3}
+  - {fileID: 5813327462464426470, guid: 946ae95da4bf99332a825e21888c64eb, type: 3}
   difficulty: 3
 --- !u!1 &1213939408
 GameObject:
@@ -2830,8 +2831,8 @@ MonoBehaviour:
   sapSpeed: 10
   sapperHealth: 100
   money: 0
-  maxHealthBase: 1000
-  maxHealth: 1000
+  maxHealthBase: 500
+  maxHealth: 500
   bulletDamageBase: 10
   bulletDamage: 10
   bulletForceBase: 10
