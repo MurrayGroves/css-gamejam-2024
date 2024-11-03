@@ -259,7 +259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawner: {fileID: 0}
-  damageToPlayer: 50
+  damageToPlayer: 10
   maxHealth: 100
   damageToSapper: 10
   moneyValue: 50
