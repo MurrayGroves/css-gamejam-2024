@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -109,6 +110,7 @@ public class PlayerController: MonoBehaviour
     private Dictionary<GameObject, UpgradeShop> _upgradeShops;
     private bool _buyCooldown = false;
     private HealthHeartBar _healthHeartBar;
+    private TextMeshProUGUI _moneyText;
     
     private void Start()
     {
@@ -120,8 +122,9 @@ public class PlayerController: MonoBehaviour
             _upgradeShops.Add(shopObj, shopObj.GetComponent<UpgradeShop>());
         }
 
-        GameObject hudParent = GameObject.Find("HUD Parent");
+        GameObject hudParent = GameObject.Find("wholescreenparent");
         _healthHeartBar = hudParent.GetComponentInChildren<HealthHeartBar>();
+        _moneyText = hudParent.transform.Find("CoinCounter").GetComponent<TextMeshProUGUI>();
     }
     
     private Tuple<GameObject, UpgradeShop, float> GetNearestShop(Vector2 position)
@@ -171,16 +174,16 @@ public class PlayerController: MonoBehaviour
             {
                 nearestSpawner.Item1.StartSapping(sapSpeed, sapperHealth);
             }
-        }
-        
-        if (Keyboard.current.eKey.wasPressedThisFrame && !_buyCooldown)
-        {
-            Tuple<GameObject, UpgradeShop, float> nearestShop = GetNearestShop(transform.position);
-            if (nearestShop.Item3 < 2)
+
+            if (!_buyCooldown)
             {
-                nearestShop.Item2.Buy();
-                _buyCooldown = true;
-                Invoke(nameof(ResetBuyCooldown), 0.5f);
+                Tuple<GameObject, UpgradeShop, float> nearestShop = GetNearestShop(transform.position);
+                if (nearestShop.Item3 < 2)
+                {
+                    nearestShop.Item2.Buy();
+                    _buyCooldown = true;
+                    Invoke(nameof(ResetBuyCooldown), 0.25f);
+                }
             }
         }
 
@@ -277,5 +280,12 @@ public class PlayerController: MonoBehaviour
     public void GrantMoney(int amount)
     {
         money += amount;
+        _moneyText.text = money.ToString();
+    }
+    
+    public void SubtractMoney(int amount)
+    {
+        money -= amount;
+        _moneyText.text = money.ToString();
     }
 }

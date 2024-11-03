@@ -68,7 +68,7 @@ public class UpgradeShop : MonoBehaviour
     {
         if (_playerController.money >= cost)
         {
-            _playerController.money -= cost;
+            _playerController.SubtractMoney(cost);
             _playerController.Upgrades[upgradeType]++;
             switch (upgradeType)
             {
