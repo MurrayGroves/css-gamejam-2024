@@ -2831,8 +2831,8 @@ MonoBehaviour:
   sapSpeed: 10
   sapperHealth: 100
   money: 0
-  maxHealthBase: 1000
-  maxHealth: 1000
+  maxHealthBase: 500
+  maxHealth: 500
   bulletDamageBase: 10
   bulletDamage: 10
   bulletForceBase: 10

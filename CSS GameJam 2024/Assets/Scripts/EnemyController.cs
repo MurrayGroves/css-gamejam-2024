@@ -24,7 +24,7 @@ public class EnemyController : MonoBehaviour
     private bool _dead = false;
     
     public Spawner spawner;
-    public int damageToPlayer = 10;
+    public int damageToPlayer = 50;
     public int maxHealth = 100;
     public int damageToSapper = 10;
     public int moneyValue = 10;

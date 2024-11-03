@@ -259,10 +259,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawner: {fileID: 0}
-  damageToPlayer: 10
+  damageToPlayer: 50
   maxHealth: 100
   damageToSapper: 10
-  moneyValue: 10
+  moneyValue: 50
 --- !u!212 &6111929215234483815
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -13,7 +13,7 @@ public class PlayerController: MonoBehaviour
     public float sapperHealth = 100;
     public int money = 0;
 
-    public int maxHealthBase = 1000;
+    public int maxHealthBase = 500;
     public int maxHealth;
     public int MaxHealth
     {
