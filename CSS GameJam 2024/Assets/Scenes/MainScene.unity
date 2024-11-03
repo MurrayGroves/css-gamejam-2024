@@ -146,8 +146,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1912536270}
+  m_Children: []
   m_Father: {fileID: 1644228162}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.078, y: 1}
@@ -2232,6 +2231,7 @@ MonoBehaviour:
   roomPrefabs:
   - {fileID: 5813327462464426470, guid: 81bbc370cdfc0d2dc8d87790f2726456, type: 3}
   - {fileID: 5813327462464426470, guid: 7d8f669533006c58e99740715cfb8529, type: 3}
+  - {fileID: 5813327462464426470, guid: 946ae95da4bf99332a825e21888c64eb, type: 3}
   difficulty: 3
 --- !u!1 &1213939408
 GameObject:

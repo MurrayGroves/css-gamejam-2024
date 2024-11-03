@@ -2,6 +2,7 @@ using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class EnemyController : MonoBehaviour
@@ -42,6 +43,8 @@ public class EnemyController : MonoBehaviour
         _enemyManagerGlobal.RegisterEnemy(gameObject);
         _playerController = _player.GetComponent<PlayerController>();
         _health = maxHealth;
+        Image moneyImage = gameObject.GetComponentInChildren<Image>();
+        moneyImage.enabled = false;
     }
 
     void FixedUpdate()
@@ -70,6 +73,8 @@ public class EnemyController : MonoBehaviour
             _rb.mass = 1000f;
             _playerController.GrantMoney(moneyValue);
             TextMeshProUGUI moneyText = gameObject.GetComponentInChildren<TextMeshProUGUI>();
+            Image moneyImage = gameObject.GetComponentInChildren<Image>();
+            moneyImage.enabled = true;
             moneyText.text = "+" + moneyValue;
             
             Invoke(nameof(DestroySelf), 0.5f);

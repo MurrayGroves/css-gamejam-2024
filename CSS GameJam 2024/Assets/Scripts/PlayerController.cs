@@ -95,7 +95,7 @@ public class PlayerController: MonoBehaviour
     public Sprite lookDownRight;
     public Sprite lookDown;
     
-    private int _health;
+    public int health;
     private Laser _laser;
     private Vector2 _movement;
     private Vector2 _lookDir;
@@ -106,7 +106,7 @@ public class PlayerController: MonoBehaviour
     
     private void Start()
     {
-        _health = MaxHealth;
+        health = MaxHealth;
         List<GameObject> shopObjs = new List<GameObject>(GameObject.FindGameObjectsWithTag("Shop"));
         _upgradeShops = new Dictionary<GameObject, UpgradeShop>();
         foreach (GameObject shopObj in shopObjs)
@@ -241,18 +241,18 @@ public class PlayerController: MonoBehaviour
         float angle = Mathf.Atan2(_lookDir.y, _lookDir.x) * Mathf.Rad2Deg;
         weapon.transform.rotation = Quaternion.Euler(0f, 0f, angle);
         
-        if (_health < MaxHealth)
+        if (health < MaxHealth)
         {
-            _health += (int) (HealthRegen * Time.fixedDeltaTime);
+            health += (int) (HealthRegen * Time.fixedDeltaTime);
         }
     }
     
     public void DealDamage(int damage)
     {
-        _health -= damage;
+        health -= damage;
         _sr.color = new Color(1, 0, 0, 1);
         
-        if (_health <= 0)
+        if (health <= 0)
         {
             _dungeonGenerator.GenerateDungeon();
         }
@@ -260,7 +260,7 @@ public class PlayerController: MonoBehaviour
 
     public void Reset()
     {
-        _health = MaxHealth;
+        health = MaxHealth;
         rb.position = new Vector2(0, -10);
     }
     
