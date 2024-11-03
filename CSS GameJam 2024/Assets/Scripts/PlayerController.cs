@@ -11,6 +11,7 @@ public class PlayerController: MonoBehaviour
     public int maxHealth = 1000;
     public float sapSpeed = 10;
     public float sapperHealth = 100;
+    public int money = 0;
 
     public Sprite lookUp;
     public Sprite lookUpRight;
@@ -142,5 +143,10 @@ public class PlayerController: MonoBehaviour
     {
         _health = maxHealth;
         rb.position = new Vector2(5, -7);
+    }
+    
+    public void GrantMoney(int amount)
+    {
+        money += amount;
     }
 }

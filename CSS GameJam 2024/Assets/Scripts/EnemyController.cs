@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
@@ -19,11 +20,13 @@ public class EnemyController : MonoBehaviour
     private float _angleOffset = 10f;
     private bool _defendingSpawner = false;
     private GameObject _spawnerToDefend;
+    private bool _dead = false;
     
     public Spawner spawner;
     public int damageToPlayer = 10;
     public int maxHealth = 100;
     public int damageToSapper = 10;
+    public int moneyValue = 10;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -53,12 +56,29 @@ public class EnemyController : MonoBehaviour
     
     private void DecreaseHealth(int damage, bool instant)
     {
+        if (_dead)
+        {
+            return;
+        }
+        
         _health -= damage * (instant ? 1 : Time.fixedDeltaTime);
         _alpha = 0.35f + (0.65f * (_health / maxHealth));
         if (_health <= 0)
         {
-            Destroy(gameObject);
+            _dead = true;
+            _sr.enabled = false;
+            _rb.mass = 1000f;
+            _playerController.GrantMoney(moneyValue);
+            TextMeshProUGUI moneyText = gameObject.GetComponentInChildren<TextMeshProUGUI>();
+            moneyText.text = "+" + moneyValue;
+            
+            Invoke(nameof(DestroySelf), 0.5f);
         }
+    }
+
+    private void DestroySelf()
+    {
+        Destroy(gameObject);
     }
 
     private void SetColour(Color colour)
@@ -69,6 +89,11 @@ public class EnemyController : MonoBehaviour
 
     public void Damage(Vector2 direction, int force, int damage, bool instant)
     {
+        if (_dead)
+        {
+            return;
+        }
+        
         _rb.AddForce(direction.normalized * (force * ( !instant ? Time.fixedDeltaTime : 1)));
         DecreaseHealth(damage, instant);
         SetColour(Color.red);
@@ -82,6 +107,11 @@ public class EnemyController : MonoBehaviour
     
     public void OnTriggerStay2D(Collider2D other)
     {
+        if (_dead)
+        {
+            return;
+        }
+        
         if (other.CompareTag("Player"))
         {
             _playerController.DealDamage(damageToPlayer);
