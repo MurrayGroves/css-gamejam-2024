@@ -13,10 +13,8 @@ public class HealthHeartBar : MonoBehaviour
         DrawHearts();
     }
 
-    public void DrawHearts()
-    {
-        float maxHealthRemainder = playerController.maxHealth % 100;
-        int heartsTomake = (int)((playerController.maxHealth / 100) + maxHealthRemainder);
+    public void DrawHearts() {
+        int heartsTomake = (int)(playerController.maxHealth / 100);
         for (int i = 0; i < heartsTomake; i++)
         {
             CreateEmptyHeart();

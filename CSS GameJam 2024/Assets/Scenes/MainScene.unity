@@ -2767,7 +2767,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 16.7
+  m_fontSize: 16.45
   m_fontSizeBase: 13
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3142,6 +3142,7 @@ MonoBehaviour:
   lookRight: {fileID: 7815866929885662937, guid: c58f5cc0fd33a54b3b3f9dff621e6d75, type: 3}
   lookDownRight: {fileID: -9216293367660043958, guid: c6a0f4056fd58caf9b6df75b4ca81f42, type: 3}
   lookDown: {fileID: -6895068092615206356, guid: 5f8b3b7d3e86a69fabcb91287cd617a1, type: 3}
+  healthHeartBar: {fileID: 136499984}
   health: 500
 --- !u!4 &1587783393
 Transform:
@@ -3531,7 +3532,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12.4
+  m_fontSize: 10.95
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

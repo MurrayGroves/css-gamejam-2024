@@ -22,8 +22,9 @@ public class PlayerController: MonoBehaviour
         set
         {
             maxHealth = value;
-            _healthHeartBar.ClearHearts();
-            _healthHeartBar.DrawHearts();
+            health = value;
+            healthHeartBar.ClearHearts();
+            healthHeartBar.DrawHearts();
         }
     }
 
@@ -100,6 +101,7 @@ public class PlayerController: MonoBehaviour
     public Sprite lookRight;
     public Sprite lookDownRight;
     public Sprite lookDown;
+    public HealthHeartBar healthHeartBar;
     
     public float health;
     private Laser _laser;
@@ -109,7 +111,6 @@ public class PlayerController: MonoBehaviour
     private DungeonGenerator _dungeonGenerator;
     private Dictionary<GameObject, UpgradeShop> _upgradeShops;
     private bool _buyCooldown = false;
-    private HealthHeartBar _healthHeartBar;
     private TextMeshProUGUI _moneyText;
     
     private void Start()
@@ -123,7 +124,6 @@ public class PlayerController: MonoBehaviour
         }
 
         GameObject hudParent = GameObject.Find("wholescreenparent");
-        _healthHeartBar = hudParent.GetComponentInChildren<HealthHeartBar>();
         _moneyText = hudParent.transform.Find("CoinCounter").GetComponent<TextMeshProUGUI>();
     }
     
