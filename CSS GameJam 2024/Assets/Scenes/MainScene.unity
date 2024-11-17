@@ -3486,26 +3486,29 @@ MonoBehaviour:
 
     j - shoot
 
-    k - knockback weapon (10 second timer)
+    k - alternate weapon (10 second timer)
 
     L
     - interact (shop/spawner)
 
 
-    Interact with a spawner to start destroying it
-    - protect it while it''s being sapped!
+    Interact with a spawner (toilet) to start sapping
+    it - defend the sapper it while it''s destroying the spawner!
 
 
-    When all the spawners are destroyed
-    the dungeon will reset but be one room larger.
+    When all
+    the spawners are destroyed the dungeon will reset but be one room larger.
 
 
-    If you die the dungeon resets,
-    but you keep upgrades and coins.
+    If
+    you die the dungeon resets, but you keep upgrades and coins.
 
 
-    Map tileset from itch.io, all other assets
-    custom made.'
+    There is no
+    sound.
+
+
+    Map tileset from itch.io, all other assets custom made.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3532,7 +3535,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 10.95
+  m_fontSize: 9.95
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3598,7 +3601,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3626916397498700004, guid: e5b5c658ff0377709a70f5567f996b06, type: 3}
       propertyPath: m_SortingLayer
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3626916397498700004, guid: e5b5c658ff0377709a70f5567f996b06, type: 3}
       propertyPath: m_SortingLayerID
